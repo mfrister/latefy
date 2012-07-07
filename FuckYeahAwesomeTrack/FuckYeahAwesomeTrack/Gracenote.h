@@ -13,7 +13,8 @@
 #import "ViewController.h"
 
 @interface Gracenote : NSObject
-
++ (GNConfig*) initConfig;
++ (void) fingerprint: (ViewController*) controller;
 @end
 
 // Result-ready object implements GNSearchResultReady and
