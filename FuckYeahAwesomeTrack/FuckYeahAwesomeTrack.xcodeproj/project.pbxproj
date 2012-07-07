@@ -29,6 +29,7 @@
 		ACE1902A15A88696000B5CD3 /* Deezer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE1902915A88696000B5CD3 /* Deezer.m */; };
 		F863A01915A85EF000595058 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F863A01815A85EF000595058 /* icon.png */; };
 		F863A01B15A85EF500595058 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F863A01A15A85EF500595058 /* icon@2x.png */; };
+		F863A04615A879B000595058 /* ListeningView.m in Sources */ = {isa = PBXBuildFile; fileRef = F863A04515A879B000595058 /* ListeningView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,8 @@
 		ACE1902915A88696000B5CD3 /* Deezer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deezer.m; sourceTree = "<group>"; };
 		F863A01815A85EF000595058 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F863A01A15A85EF500595058 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		F863A04415A879B000595058 /* ListeningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListeningView.h; sourceTree = "<group>"; };
+		F863A04515A879B000595058 /* ListeningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListeningView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				041D9F8E15A8833A009409D3 /* Gracenote.m */,
 				ACE1902815A88696000B5CD3 /* Deezer.h */,
 				ACE1902915A88696000B5CD3 /* Deezer.m */,
+				F863A04415A879B000595058 /* ListeningView.h */,
+				F863A04515A879B000595058 /* ListeningView.m */,
 			);
 			path = FuckYeahAwesomeTrack;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				046A9FE415A8560300769F29 /* ViewController.m in Sources */,
 				041D9F8F15A8833A009409D3 /* Gracenote.m in Sources */,
 				ACE1902A15A88696000B5CD3 /* Deezer.m in Sources */,
+				F863A04615A879B000595058 /* ListeningView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

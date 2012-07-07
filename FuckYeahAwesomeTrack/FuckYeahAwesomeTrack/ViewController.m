@@ -19,6 +19,8 @@
 @synthesize button;
 @synthesize trackName;
 @synthesize deezer;
+@synthesize listeningView;
+@synthesize imageView;
 
 - (void)viewDidLoad
 {
@@ -36,11 +38,13 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
 - (IBAction)listenToTheMusic:(id)sender 
 {
+	button.hidden = YES;
+	
 	NSLog(@"Button touched");
     NSLog(@"Fingerprint start");
 
@@ -48,6 +52,19 @@
 
     //    deezer = [[Deezer alloc] init];
     //    [deezer authorize];
+}
+
+- (void) setPercent:(CGFloat) percent
+{
+	listeningView.percent = percent;
+}
+
+- (void) loadImagefromURL:(NSString *)imageURL
+{
+	NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];
+
+	UIImage *image = [[UIImage alloc] initWithData:imageData];
+	[imageView setImage:image];
 }
 
 @end
