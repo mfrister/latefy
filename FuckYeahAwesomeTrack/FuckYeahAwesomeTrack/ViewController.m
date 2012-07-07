@@ -59,10 +59,8 @@
 	listeningView.percent = percent;
 }
 
-- (void) loadImagefromURL:(NSString *)imageURL
+- (void) loadImagefromURL:(NSData *) imageData
 {
-	NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:imageURL]];
-
 	UIImage *image = [[UIImage alloc] initWithData:imageData];
 	[imageView setImage:image];
 }

@@ -58,6 +58,7 @@
             NSLog(@"ArtURL: %@", coverArt.url);
             
             controller.trackName.text = best.artist;
+            [ controller loadImagefromURL: coverArt.data ];
         }
     }
 

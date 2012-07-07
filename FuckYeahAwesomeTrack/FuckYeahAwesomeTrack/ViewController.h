@@ -17,6 +17,7 @@
 }
 
 - (void) setPercent:(CGFloat) percent;
+- (void) loadImagefromURL:(NSData *)imageData;
 
 @property (nonatomic, retain) GNConfig *config;
 @property (nonatomic, retain) IBOutlet UIButton *button;
