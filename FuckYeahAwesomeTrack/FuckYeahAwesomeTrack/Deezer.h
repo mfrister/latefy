@@ -12,7 +12,9 @@
 @interface Deezer : NSObject<DeezerSessionDelegate, DeezerRequestDelegate>
 
 @property (nonatomic, retain) DeezerConnect *deezerConnect;
+@property (nonatomic, retain) NSString *query;
 
+- (void)addTrackWithArtist: (NSString*) artist andTitle: (NSString*) title;
 - (void)authorize;
 
 - (void)retrieveTokenAndExpirationDate;

@@ -18,6 +18,20 @@
 @implementation Deezer
 
 @synthesize deezerConnect;
+@synthesize query;
+
+- (void)addTrackWithArtist: (NSString*) artist andTitle: (NSString*) title {
+    [self authorize];
+    query = [[NSString alloc] initWithFormat:@"%@ %@", artist, title];
+}
+
+- (void)findTrack {
+    NSString* servicePath =@"search";
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: query, @"q", nil];
+    DeezerRequest* request = [deezerConnect createRequestWithServicePath:servicePath params: params delegate:self];
+    [deezerConnect launchAsyncRequest:request];
+}
+
 
 -(void) authorize {
     if(!deezerConnect) {
@@ -28,13 +42,9 @@
         [self deezerDidLogin];
         return;
     }
-    
-    NSLog(@"init alloc");
-    //    /* List of permissions available from the Deezer SDK web site */
+    NSLog(@"Deezer authorize");
     NSMutableArray* permissionsArray = [NSMutableArray arrayWithObjects:@"basic_access", @"manage_library", nil];
-    NSLog(@"array");
     [deezerConnect authorize:permissionsArray];
-    NSLog(@"connected");
 }
 
 - (void)retrieveTokenAndExpirationDate {
@@ -55,10 +65,7 @@
 - (void)deezerDidLogin {
     NSLog(@"Deezer did login");
     [self saveTokenAndExpirationDate];
-    NSString* servicePath =@"user/me/playlists";
-    DeezerRequest* request = [deezerConnect createRequestWithServicePath:servicePath params:nil delegate:self];
-    
-    [deezerConnect launchAsyncRequest:request];
+    [self findTrack];
 }
 
 - (void)deezerDidNotLogin:(BOOL)cancelled {
@@ -70,6 +77,7 @@
 }
 
 - (void)request:(DeezerRequest *)request didReceiveResponse:(NSData *)data {
+    query = nil;
     NSLog(@"Deezer response");
 }
 
