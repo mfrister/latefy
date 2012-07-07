@@ -18,6 +18,8 @@
 @synthesize config;
 @synthesize button;
 @synthesize trackName;
+@synthesize artistName;
+@synthesize albumName;
 @synthesize deezer;
 @synthesize listeningView;
 @synthesize imageView;

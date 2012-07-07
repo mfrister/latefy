@@ -22,30 +22,38 @@
 @synthesize controller;
 
 // Method to handle the status changed updates from the operation
-- (void) GNStatusChanged: (GNStatus*) status
+- (void) GNStatusChanged:(GNStatus *)status
 {
-    NSString* msg;
-
+    NSString *message;
+	
     if (status.status == RECORDING)
     {
-        msg = [NSString stringWithFormat: @"%@ %d@", status.message, status.percentDone, @"%"];
-        [ controller setPercent: status.percentDone];
+        message = [NSString stringWithFormat: @"%@ %d@", status.message, status.percentDone, @"%"];
+        [controller setPercent:status.percentDone];
     }
-    else {
-        msg = status.message;
+    else 
+	{
+        message = status.message;
     }
-    NSLog(@"%@", msg);
+    
+	NSLog(@"%@", message);
 }
 
 // Method to handle result returned from operation
-- (void) GNResultReady: (GNSearchResult*) result
+- (void) GNResultReady: (GNSearchResult *)result
 {
-    if ([result isFailure]) {
+    if ([result isFailure]) 
+	{
         NSLog(@"Error %d %@", result.errCode, result.errMessage); 
-    } else {
-        if ([result isAnySearchNoMatchStatus]) {
+    }
+	else
+	{
+        if ([result isAnySearchNoMatchStatus]) 
+		{
             NSLog(@"NO_MATCH\n");
-        } else {
+        }
+		else 
+		{
             GNSearchResponse *best = [result bestResponse];
             
             NSLog(@"Artist: %@", best.artist);
@@ -54,38 +62,42 @@
             NSLog(@"AlbumReleaseYear: %@", best.albumReleaseYear);
             NSLog(@"Art: %@", best.coverArt);
             
-            GNCoverArt* coverArt = best.coverArt;
+            GNCoverArt *coverArt = best.coverArt;
             NSLog(@"ArtURL: %@", coverArt.url);
             
             controller.trackName.text = best.artist;
-            [ controller loadImagefromURL: coverArt.data ];
+            [controller loadImagefromURL:coverArt.data];
         }
     }
-
+	
     NSLog(@"%@", result);
+	
+	controller.button.hidden = NO;
 }
+
 @end
 
 @implementation Gracenote
-    + (GNConfig*) initConfig
-    {
-        GNConfig *config = [GNConfig init:GRACENOTE_CLIENT_ID];
-        
-        [config setProperty: @"debugEnabled" value: @"1"];
-        [config setProperty: @"content.musicId.queryPreference.singleBestMatch" value: @"true"];
-        [config setProperty: @"content.coverArt" value: @"true"];
-        [config setProperty: @"content.coverArt.sizePreference" value: @"medium, small"];            
-        
-        return config;
-    }
 
++ (GNConfig *)initConfig
+{
+	GNConfig *config = [GNConfig init:GRACENOTE_CLIENT_ID];
+	
+	[config setProperty: @"debugEnabled" value:@"1"];
+	[config setProperty: @"content.musicId.queryPreference.singleBestMatch" value:@"true"];
+	[config setProperty: @"content.coverArt" value:@"true"];
+	[config setProperty: @"content.coverArt.sizePreference" value:@"medium, small"];            
+	
+	return config;
+}
 
-    + (void) fingerprint: (ViewController*) controller
-    {
-        // Create result-ready object to receive recognition result
-        SearchResultsStatusReady *searchResultReady = [SearchResultsStatusReady alloc];
-        searchResultReady.controller = controller;
-        // Invoke recognition operation
-        [GNOperations recognizeMIDStreamFromMic: searchResultReady config: controller.config];
-    }
++ (void) fingerprint: (ViewController *)controller
+{
+	// Create result-ready object to receive recognition result
+	SearchResultsStatusReady *searchResultReady = [SearchResultsStatusReady alloc];
+	searchResultReady.controller = controller;
+	// Invoke recognition operation
+	[GNOperations recognizeMIDStreamFromMic: searchResultReady config:controller.config];
+}
+
 @end
