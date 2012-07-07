@@ -43,7 +43,7 @@
 	CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientColors, gradientLocations);
 	
 	//// Shadow Declarations
-	UIColor *shadow = [UIColor blackColor];
+	UIColor *shadow = [UIColor whiteColor];
 	CGSize shadowOffset = CGSizeMake(3, 3);
 	CGFloat shadowBlurRadius = 7;
 	

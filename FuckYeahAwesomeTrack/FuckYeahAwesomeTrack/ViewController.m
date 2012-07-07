@@ -30,6 +30,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
 	self.config = Gracenote.initConfig;        
+	
+	trackName.text = @"";
+	artistName.text = @"";
+	albumName.text = @"";
 }
 
 - (void)viewDidUnload
@@ -46,6 +50,10 @@
 - (IBAction)listenToTheMusic:(id)sender 
 {
 	button.hidden = YES;
+	imageView.hidden = YES;
+	trackName.text = @"";
+	artistName.text = @"";
+	albumName.text = @"";
 	
 	NSLog(@"Button touched");
     NSLog(@"Fingerprint start");
@@ -55,14 +63,16 @@
 
 - (void) setPercent:(CGFloat) percent
 {
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:1];
 	listeningView.percent = percent;
+	[UIView commitAnimations];
 }
 
-- (void) loadImagefromURL:(NSData *) imageData
+- (void) loadImagefromURL:(NSData *)imageData
 {
-	UIImage *image = [[UIImage alloc] initWithData:imageData];
-	[imageView setImage:image];
-
+	[imageView setImage:[[UIImage alloc] initWithData:imageData]];
+	imageView.hidden = NO;
 }
 
 - (void) sendTrackToDeezerWithArtist:(NSString *)artist withTitle:(NSString *)title

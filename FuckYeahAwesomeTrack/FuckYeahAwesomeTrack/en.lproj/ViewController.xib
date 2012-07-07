@@ -50,26 +50,28 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Track Name</string>
-						<object class="NSColor" key="IBUITextColor" id="205014455">
+						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
+							<bytes key="NSRGB">MSAwLjczOTU2NzYxNTkgMC43NjMxODE1OTMzAA</bytes>
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<float key="IBUIMinimumFontSize">10</float>
 						<int key="IBUINumberOfLines">2</int>
 						<int key="IBUITextAlignment">1</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="634448394">
-							<int key="type">1</int>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<string key="name">TrebuchetMS-Bold</string>
+							<string key="family">Trebuchet MS</string>
+							<int key="traits">2</int>
 							<double key="pointSize">17</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="991153960">
-							<string key="NSName">Helvetica</string>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">TrebuchetMS-Bold</string>
 							<double key="NSSize">17</double>
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUILabel" id="187548449">
+					<object class="IBUILabel" id="665642263">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{20, 352}, {280, 40}}</string>
@@ -82,16 +84,28 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Artist</string>
-						<reference key="IBUITextColor" ref="205014455"/>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC45NjIwOTA4MjIxIDEgMC43MDY1NDY1NTk5AA</bytes>
+						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<float key="IBUIMinimumFontSize">10</float>
 						<int key="IBUINumberOfLines">2</int>
 						<int key="IBUITextAlignment">1</int>
-						<reference key="IBUIFontDescription" ref="634448394"/>
-						<reference key="IBUIFont" ref="991153960"/>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<string key="name">TrebuchetMS</string>
+							<string key="family">Trebuchet MS</string>
+							<int key="traits">0</int>
+							<double key="pointSize">17</double>
+						</object>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">TrebuchetMS</string>
+							<double key="NSSize">17</double>
+							<int key="NSfFlags">16</int>
+						</object>
 					</object>
-					<object class="IBUILabel" id="608427497">
+					<object class="IBUILabel" id="868084001">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{20, 400}, {280, 40}}</string>
@@ -104,14 +118,24 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<string key="IBUIText">Album</string>
-						<reference key="IBUITextColor" ref="205014455"/>
+						<object class="NSColor" key="IBUITextColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC44MTE5NTYyMTk2IDEgMC45MjcyOTQxNTU3AA</bytes>
+						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
 						<float key="IBUIMinimumFontSize">10</float>
 						<int key="IBUINumberOfLines">2</int>
 						<int key="IBUITextAlignment">1</int>
-						<reference key="IBUIFontDescription" ref="634448394"/>
-						<reference key="IBUIFont" ref="991153960"/>
+						<object class="IBUIFontDescription" key="IBUIFontDescription">
+							<int key="type">1</int>
+							<double key="pointSize">17</double>
+						</object>
+						<object class="NSFont" key="IBUIFont">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">17</double>
+							<int key="NSfFlags">16</int>
+						</object>
 					</object>
 					<object class="IBUIView" id="207284926">
 						<reference key="NSNextResponder" ref="774585933"/>
@@ -137,6 +161,10 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
+						<object class="NSColor" key="IBUITintColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC40NDY2NDM1ODQ0IDAuNTI2NTA5NTkyIDEAA</bytes>
+						</object>
 						<string key="IBUITitleShadowOffset">{0, -1}</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor">
 							<int key="NSColorSpace">3</int>
@@ -181,10 +209,7 @@
 				<reference key="NSNextKeyView" ref="207284926"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MC43NQA</bytes>
-					<object class="NSColorSpace" key="NSCustomColorSpace">
-						<int key="NSID">2</int>
-					</object>
+					<bytes key="NSWhite">MAA</bytes>
 				</object>
 				<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
@@ -239,7 +264,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">albumName</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="608427497"/>
+						<reference key="destination" ref="868084001"/>
 					</object>
 					<int key="connectionID">19</int>
 				</object>
@@ -247,7 +272,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">artistName</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="187548449"/>
+						<reference key="destination" ref="665642263"/>
 					</object>
 					<int key="connectionID">20</int>
 				</object>
@@ -286,10 +311,10 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="207284926"/>
 							<reference ref="321233085"/>
-							<reference ref="608427497"/>
-							<reference ref="187548449"/>
+							<reference ref="868084001"/>
 							<reference ref="842430831"/>
 							<reference ref="721550836"/>
+							<reference ref="665642263"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -316,12 +341,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
-						<reference key="object" ref="187548449"/>
+						<reference key="object" ref="665642263"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">18</int>
-						<reference key="object" ref="608427497"/>
+						<reference key="object" ref="868084001"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</array>

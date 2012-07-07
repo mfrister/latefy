@@ -11,7 +11,6 @@
 #import "Deezer.h"
 #import "Secrets.h"
 
-
 #define DEEZER_TOKEN_KEY @"DeezerTokenKey"
 #define DEEZER_EXPIRATION_DATE_KEY @"DeezerExpirationDateKey"
 #define DEEZER_USER_ID_KEY @"DeezerUserId"
