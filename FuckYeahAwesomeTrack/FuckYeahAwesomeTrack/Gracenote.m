@@ -51,6 +51,7 @@
         if ([result isAnySearchNoMatchStatus]) 
 		{
             NSLog(@"NO_MATCH\n");
+            controller.trackName.text = @"Not Found :(";            
         }
 		else 
 		{
