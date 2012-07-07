@@ -14,6 +14,9 @@
 
 @implementation ViewController
 
+@synthesize button;
+@synthesize trackName;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
