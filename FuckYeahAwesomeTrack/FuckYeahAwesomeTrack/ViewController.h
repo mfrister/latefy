@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@class GNConfig;
+
+@interface ViewController : UIViewController {
+
+  GNConfig *m_config;
+}
+
+@property (nonatomic, retain) GNConfig *config;
 
 @end
