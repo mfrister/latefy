@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041D9F8F15A8833A009409D3 /* Gracenote.m in Sources */ = {isa = PBXBuildFile; fileRef = 041D9F8E15A8833A009409D3 /* Gracenote.m */; };
 		04639A9015A865D300E2D534 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04639A8E15A865D300E2D534 /* CoreMedia.framework */; };
 		04639A9115A865D300E2D534 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04639A8F15A865D300E2D534 /* MediaPlayer.framework */; };
 		04639A9415A865D900E2D534 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04639A9315A865D900E2D534 /* AudioToolbox.framework */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041D9F8D15A8833A009409D3 /* Gracenote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gracenote.h; sourceTree = "<group>"; };
+		041D9F8E15A8833A009409D3 /* Gracenote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gracenote.m; sourceTree = "<group>"; };
 		04639A8E15A865D300E2D534 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		04639A8F15A865D300E2D534 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		04639A9315A865D900E2D534 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -131,6 +134,8 @@
 				046A9FE315A8560300769F29 /* ViewController.m */,
 				046A9FE515A8560300769F29 /* ViewController.xib */,
 				046A9FD715A8560300769F29 /* Supporting Files */,
+				041D9F8D15A8833A009409D3 /* Gracenote.h */,
+				041D9F8E15A8833A009409D3 /* Gracenote.m */,
 			);
 			path = FuckYeahAwesomeTrack;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				046A9FDD15A8560300769F29 /* main.m in Sources */,
 				046A9FE115A8560300769F29 /* AppDelegate.m in Sources */,
 				046A9FE415A8560300769F29 /* ViewController.m in Sources */,
+				041D9F8F15A8833A009409D3 /* Gracenote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

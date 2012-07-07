@@ -10,62 +10,12 @@
 
 #import <GracenoteMusicID/GNConfig.h>
 #import <GracenoteMusicID/GNUtil.h>
-#import <GracenoteMusicID/GNSearchResult.h>
-#import <GracenoteMusicID/GNSearchResultReady.h>
-#import <GracenoteMusicID/GNSearchResponse.h>
 #import <GracenoteMusicID/GNOperations.h>
-#import <GracenoteMusicID/GNOperationStatusChanged.h>
-#import <GracenoteMusicID/GNStatus.h>
+
+#import "Gracenote.h"
 
 @interface ViewController ()
 
-@end
-
-// Result-ready object implements GNSearchResultReady and
-// GNOperationStatusChanged protocols
-@ interface SearchResultsStatusReady : NSObject <GNSearchResultReady, GNOperationStatusChanged>
-{
-}
-@ end
-
-// Provide implementation for GNOperationStatusChanged method
-@ implementation SearchResultsStatusReady
-// Method to handle the status changed updates from the operation
-- (void) GNStatusChanged: (GNStatus*) status
-{
-    NSString* msg;
-    
-    if (status.status == RECORDING)
-    {
-        msg = [NSString stringWithFormat: @"%@ %d@", status.message, status.percentDone, @"%"];
-    }
-    else {
-        msg = status.message;
-    }
-    NSLog(@"%@", msg);
-}
-
-// Method to handle result returned from operation
-- (void) GNResultReady: (GNSearchResult*) result
-{
-    if ([result isFailure]) {
-        NSLog(@"Error %d %@", result.errCode, result.errMessage); 
-    } else {
-        if ([result isAnySearchNoMatchStatus]) {
-            NSLog(@"NO_MATCH\n");
-        } else {
-            GNSearchResponse *best = [result bestResponse];
-            
-            NSLog(@"Artist: %@", best.artist);
-            if (best.artistYomi != nil) {
-                NSLog(@"%@", best.artistYomi);
-            }
-            NSLog(@"1");
-        }
-    }
-
-    NSLog(@"%@", result);
-}
 @end
 
 @implementation ViewController
@@ -85,13 +35,6 @@
     
 	//RecognizeFromMicOperation *op = [RecognizeFromMicOperation recognizeFromMicOperation:self.config];
 	//[GNOperations recognizeMIDStreamFromMic:op config:self.config];    
-    
-    NSLog(@"Fingerprint start");
-    
-    // Create result-ready object to receive recognition result
-    SearchResultsStatusReady *searchResultReady = [SearchResultsStatusReady alloc];
-    // Invoke recognition operation
-    [GNOperations recognizeMIDStreamFromMic: searchResultReady config: self.config];
 }
 
 - (void)viewDidUnload
@@ -108,6 +51,14 @@
 - (IBAction)listenToTheMusic:(id)sender 
 {
 	NSLog(@"Button touched");
+    NSLog(@"Fingerprint start");
+
+    // Create result-ready object to receive recognition result
+    SearchResultsStatusReady *searchResultReady = [SearchResultsStatusReady alloc];
+    searchResultReady.controller = self;
+    // Invoke recognition operation
+    [GNOperations recognizeMIDStreamFromMic: searchResultReady config: self.config];
+
 }
 
 @end
