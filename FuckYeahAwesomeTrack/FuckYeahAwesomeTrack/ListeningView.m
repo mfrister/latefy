@@ -50,7 +50,7 @@
 	//// Oval Drawing
 //	UIBezierPath *ovalPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(self.bounds, 20, 20)];
 	
-	UIBezierPath *ovalPath = [UIBezierPath bezierPathWithArcCenter:self.center radius:self.bounds.size.width/2 - 40 startAngle:0 endAngle:radians(percent) clockwise:YES];
+	UIBezierPath *ovalPath = [UIBezierPath bezierPathWithArcCenter:self.center radius:self.bounds.size.width/2 - 40 startAngle:0 endAngle:radians(percent*3.6) clockwise:YES];
 	[ovalPath addLineToPoint:self.center];
 	
 	CGContextSaveGState(context);
