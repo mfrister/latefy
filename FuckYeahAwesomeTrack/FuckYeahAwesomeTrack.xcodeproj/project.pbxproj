@@ -16,6 +16,8 @@
 		046A9FE415A8560300769F29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A9FE315A8560300769F29 /* ViewController.m */; };
 		046A9FE715A8560300769F29 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046A9FE515A8560300769F29 /* ViewController.xib */; };
 		04ABA91515A859CE003455BD /* Frameworks in Resources */ = {isa = PBXBuildFile; fileRef = 04ABA91415A859CE003455BD /* Frameworks */; };
+		F863A01915A85EF000595058 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F863A01815A85EF000595058 /* icon.png */; };
+		F863A01B15A85EF500595058 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F863A01A15A85EF500595058 /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		046A9FE315A8560300769F29 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		046A9FE615A8560300769F29 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		04ABA91415A859CE003455BD /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Frameworks; sourceTree = "<group>"; };
+		F863A01815A85EF000595058 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		F863A01A15A85EF500595058 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,8 @@
 		046A9FC115A8560200769F29 = {
 			isa = PBXGroup;
 			children = (
+				F863A01A15A85EF500595058 /* icon@2x.png */,
+				F863A01815A85EF000595058 /* icon.png */,
 				046A9FD615A8560300769F29 /* FuckYeahAwesomeTrack */,
 				046A9FCF15A8560300769F29 /* Frameworks */,
 				046A9FCD15A8560300769F29 /* Products */,
@@ -80,7 +86,6 @@
 		046A9FD615A8560300769F29 /* FuckYeahAwesomeTrack */ = {
 			isa = PBXGroup;
 			children = (
-				F86491FC15A8583E00BCAB03 /* resources */,
 				046A9FDF15A8560300769F29 /* AppDelegate.h */,
 				046A9FE015A8560300769F29 /* AppDelegate.m */,
 				046A9FE215A8560300769F29 /* ViewController.h */,
@@ -100,13 +105,6 @@
 				046A9FDE15A8560300769F29 /* FuckYeahAwesomeTrack-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F86491FC15A8583E00BCAB03 /* resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +160,8 @@
 				046A9FDB15A8560300769F29 /* InfoPlist.strings in Resources */,
 				046A9FE715A8560300769F29 /* ViewController.xib in Resources */,
 				04ABA91515A859CE003455BD /* Frameworks in Resources */,
+				F863A01915A85EF000595058 /* icon.png in Resources */,
+				F863A01B15A85EF500595058 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
