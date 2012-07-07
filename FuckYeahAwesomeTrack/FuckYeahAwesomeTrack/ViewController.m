@@ -50,10 +50,10 @@
 	NSLog(@"Button touched");
     NSLog(@"Fingerprint start");
 
-//    [Gracenote fingerprint: self];
+    [Gracenote fingerprint: self];
 
-    deezer = [[Deezer alloc] init];
-    [deezer addTrackWithArtist:@"Eminem" andTitle:@"My name is"];
+    //deezer = [[Deezer alloc] init];
+    //[deezer addTrackWithArtist:@"Eminem" andTitle:@"My name is"];
 }
 
 - (void) setPercent:(CGFloat) percent
