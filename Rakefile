@@ -11,6 +11,22 @@ Motion::Project::App.setup do |app|
     :products => ['libDeezer.a'],
     :headers_dir => 'Headers')
   app.interface_orientations = [:portrait]
+
+  app.vendor_project('vendor/GracenoteMusicID.framework', :static,
+    :products => ['GracenoteMusicID'],
+    :headers_dir => 'Headers')
+
+  app.frameworks += [
+    'MediaPlayer',
+    'AudioTool',
+    'CoreDate',
+    'CoreLocation',
+    'AVFoundation',
+    'MapKit',
+    'CoreMedia'
+  ]
+
+  app.libs << '/usr/lib/libxml2.dylib'
 end
 
 desc 'compiles interfaces/*.xib to resources/*.nib'
