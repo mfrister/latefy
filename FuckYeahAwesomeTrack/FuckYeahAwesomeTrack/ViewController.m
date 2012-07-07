@@ -71,6 +71,8 @@
 @implementation ViewController
 
 @synthesize config = m_config;
+@synthesize button;
+@synthesize trackName;
 
 - (void)viewDidLoad
 {
@@ -101,6 +103,11 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (IBAction)listenToTheMusic:(id)sender 
+{
+	NSLog(@"Button touched");
 }
 
 @end
