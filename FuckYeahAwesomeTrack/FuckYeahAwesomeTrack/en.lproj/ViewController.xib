@@ -93,19 +93,19 @@
 						<float key="IBUIMinimumFontSize">10</float>
 						<int key="IBUINumberOfLines">2</int>
 						<int key="IBUITextAlignment">1</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="206953202">
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="154709072">
 							<string key="name">TrebuchetMS</string>
 							<string key="family">Trebuchet MS</string>
 							<int key="traits">0</int>
 							<double key="pointSize">17</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="622029621">
+						<object class="NSFont" key="IBUIFont" id="825724494">
 							<string key="NSName">TrebuchetMS</string>
 							<double key="NSSize">17</double>
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUILabel" id="685066135">
+					<object class="IBUILabel" id="635331692">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{20, 400}, {280, 40}}</string>
@@ -127,13 +127,13 @@
 						<float key="IBUIMinimumFontSize">10</float>
 						<int key="IBUINumberOfLines">2</int>
 						<int key="IBUITextAlignment">1</int>
-						<reference key="IBUIFontDescription" ref="206953202"/>
-						<reference key="IBUIFont" ref="622029621"/>
+						<reference key="IBUIFontDescription" ref="154709072"/>
+						<reference key="IBUIFont" ref="825724494"/>
 					</object>
 					<object class="IBUIView" id="207284926">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">319</int>
-						<string key="NSFrame">{{20, 20}, {280, 280}}</string>
+						<string key="NSFrame">{{10, 10}, {280, 280}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="321233085"/>
@@ -162,7 +162,7 @@
 							<bytes key="NSRGB">MC40NDY2NDM1ODQ0IDAuNTI2NTA5NTkyIDEAA</bytes>
 						</object>
 						<string key="IBUITitleShadowOffset">{0, -1}</string>
-						<object class="NSColor" key="IBUIHighlightedTitleColor" id="603966761">
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="337821283">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
@@ -170,7 +170,7 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<object class="NSColor" key="IBUINormalTitleShadowColor" id="328682814">
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="902951881">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
 						</object>
@@ -198,7 +198,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
-					<object class="IBUIButton" id="42626435">
+					<object class="IBUIButton" id="239577336">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{92, 403}, {136, 37}}</string>
@@ -215,12 +215,12 @@
 							<bytes key="NSRGB">MC40NDY2NDM1ODQ0IDAuNTI2NTA5NTkyIDEAA</bytes>
 						</object>
 						<string key="IBUINormalTitle">Add to DEEZER</string>
-						<reference key="IBUIHighlightedTitleColor" ref="603966761"/>
+						<reference key="IBUIHighlightedTitleColor" ref="337821283"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="328682814"/>
+						<reference key="IBUINormalTitleShadowColor" ref="902951881"/>
 						<object class="IBUIFontDescription" key="IBUIFontDescription">
 							<int key="type">2</int>
 							<double key="pointSize">15</double>
@@ -301,7 +301,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">deezerButton</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="42626435"/>
+						<reference key="destination" ref="239577336"/>
 					</object>
 					<int key="connectionID">24</int>
 				</object>
@@ -309,7 +309,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">message</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="685066135"/>
+						<reference key="destination" ref="635331692"/>
 					</object>
 					<int key="connectionID">26</int>
 				</object>
@@ -325,7 +325,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">addToDeezer:</string>
-						<reference key="source" ref="42626435"/>
+						<reference key="source" ref="239577336"/>
 						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">7</int>
 					</object>
@@ -355,13 +355,13 @@
 						<int key="objectID">6</int>
 						<reference key="object" ref="774585933"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="207284926"/>
 							<reference ref="321233085"/>
 							<reference ref="842430831"/>
 							<reference ref="721550836"/>
 							<reference ref="665642263"/>
-							<reference ref="42626435"/>
-							<reference ref="685066135"/>
+							<reference ref="239577336"/>
+							<reference ref="635331692"/>
+							<reference ref="207284926"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -393,12 +393,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">21</int>
-						<reference key="object" ref="42626435"/>
+						<reference key="object" ref="239577336"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">25</int>
-						<reference key="object" ref="685066135"/>
+						<reference key="object" ref="635331692"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</array>
