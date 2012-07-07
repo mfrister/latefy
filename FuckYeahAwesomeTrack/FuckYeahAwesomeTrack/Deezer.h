@@ -9,18 +9,26 @@
 #import <Foundation/Foundation.h>
 #import "libDeezer/DeezerConnect.h"
 
+// values for requestType
+#define DEEZER_FIND_TRACK 1
+#define DEEZER_FIND_PLAYLIST 2
+#define DEEZER_ADD_TRACK_TO_PLAYLIST 3
+
 @interface Deezer : NSObject<DeezerSessionDelegate, DeezerRequestDelegate>
 
 @property (nonatomic, retain) DeezerConnect *deezerConnect;
-// 
+
 @property (nonatomic, retain) NSString *query;
+@property (nonatomic, retain) NSString *trackId;
+@property (nonatomic) int requestType;
 
 - (void)addTrackWithArtist: (NSString*) artist andTitle: (NSString*) title;
 - (void)authorize;
-- (void)handleSearchResponse: (NSData*)data;
-//- (void)findPlaylist;
-//- (void)handleFindResponse
-//- (void)addTrackWithId: (NSString*) trackId;
+- (void)handleFindTrackResponse: (NSData*)data;
+- (void)findPlaylist;
+- (void)handleFindPlaylistResponse: (NSData*) data;
+- (void)addTrackToPlaylistWithId: (NSString*) playlistId;
+- (void)handleAddTrackToPlaylistResponse: (NSData*) data;
 
 - (void)retrieveTokenAndExpirationDate;
 - (void)saveTokenAndExpirationDate;
