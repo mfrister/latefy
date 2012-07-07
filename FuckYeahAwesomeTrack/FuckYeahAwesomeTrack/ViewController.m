@@ -51,9 +51,6 @@
     NSLog(@"Fingerprint start");
 
     [Gracenote fingerprint: self];
-
-    //deezer = [[Deezer alloc] init];
-    //[deezer addTrackWithArtist:@"Eminem" andTitle:@"My name is"];
 }
 
 - (void) setPercent:(CGFloat) percent
@@ -66,6 +63,12 @@
 	UIImage *image = [[UIImage alloc] initWithData:imageData];
 	[imageView setImage:image];
 
+}
+
+- (void) sendTrackToDeezerWithArtist:(NSString *)artist withTitle:(NSString *)title
+{
+    deezer = [[Deezer alloc] init];
+    [deezer addTrackWithArtist:artist andTitle:title];
 }
 
 @end

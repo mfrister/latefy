@@ -51,7 +51,12 @@
         if ([result isAnySearchNoMatchStatus]) 
 		{
             NSLog(@"NO_MATCH\n");
-            controller.trackName.text = @"Not Found :(";            
+            controller.trackName.text = @"Not Found :("; 
+            
+            [ controller 
+             sendTrackToDeezerWithArtist: @"Absolute Beginner"
+             withTitle: @"Liebes Lied"
+            ];
         }
 		else 
 		{
@@ -76,6 +81,11 @@
                     best.albumTitle,
                     best.albumReleaseYear
                  ];
+            
+            [ controller 
+                sendTrackToDeezerWithArtist: best.artist
+                withTitle: best.trackTitle
+            ];
         }
     }
 	

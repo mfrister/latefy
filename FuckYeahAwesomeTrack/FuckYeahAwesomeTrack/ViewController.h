@@ -18,6 +18,7 @@
 
 - (void) setPercent:(CGFloat) percent;
 - (void) loadImagefromURL:(NSData *)imageData;
+- (void) sendTrackToDeezerWithArtist:(NSString *)artist withTitle:(NSString *)title;
 
 @property (nonatomic, retain) GNConfig *config;
 @property (nonatomic, retain) IBOutlet UIButton *button;
