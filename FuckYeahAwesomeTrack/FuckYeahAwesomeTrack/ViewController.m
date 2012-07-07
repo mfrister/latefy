@@ -34,4 +34,9 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (IBAction)listenToTheMusic:(id)sender 
+{
+	NSLog(@"Button touched");
+}
+
 @end

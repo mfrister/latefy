@@ -36,7 +36,7 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUILabel" id="825144385">
+					<object class="IBUILabel" id="121476196">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{20, 308}, {280, 132}}</string>
@@ -68,13 +68,13 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUIButton" id="790877319">
+					<object class="IBUIButton" id="840529933">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">319</int>
 						<string key="NSFrame">{{20, 20}, {280, 280}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="825144385"/>
+						<reference key="NSNextKeyView" ref="121476196"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -135,7 +135,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">button</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="790877319"/>
+						<reference key="destination" ref="840529933"/>
 					</object>
 					<int key="connectionID">10</int>
 				</object>
@@ -143,9 +143,18 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">trackName</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="825144385"/>
+						<reference key="destination" ref="121476196"/>
 					</object>
 					<int key="connectionID">11</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">listenToTheMusic:</string>
+						<reference key="source" ref="840529933"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">12</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -171,19 +180,19 @@
 						<int key="objectID">6</int>
 						<reference key="object" ref="774585933"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="825144385"/>
-							<reference ref="790877319"/>
+							<reference ref="121476196"/>
+							<reference ref="840529933"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
-						<reference key="object" ref="825144385"/>
+						<reference key="object" ref="121476196"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>
-						<reference key="object" ref="790877319"/>
+						<reference key="object" ref="840529933"/>
 						<reference key="parent" ref="774585933"/>
 					</object>
 				</array>
@@ -201,7 +210,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">11</int>
+			<int key="maxID">12</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
