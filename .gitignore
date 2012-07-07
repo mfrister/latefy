@@ -1,5 +1,6 @@
 project.xcworkspace
-Frameworks
+GracenoteMusicID.framework
+libDeezer.framework
 Secrets.h
 
 # from https://github.com/github/gitignore/blob/master/Objective-C.gitignore
