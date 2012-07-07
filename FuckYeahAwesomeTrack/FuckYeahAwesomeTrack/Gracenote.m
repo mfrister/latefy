@@ -68,14 +68,12 @@
             
             controller.trackName.text = best.artist;
             [controller loadImagefromURL:coverArt.data];
-
+			
             controller.trackName.text = best.trackTitle;
             controller.artistName.text = best.artist;
-            controller.albumName.text =
-                [ NSString stringWithFormat:@"%@ (%@)",
-                    best.albumTitle,
-                    best.albumReleaseYear
-                 ];
+            controller.albumName.text = [NSString stringWithFormat:@"%@ (%@)",
+										 best.albumTitle,
+										 best.albumReleaseYear];
         }
     }
 	
