@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "deezer.h"
+#import "ListeningView.h"
 
 @class GNConfig;
 
-@interface ViewController : UIViewController {
-
+@interface ViewController : UIViewController 
+{
   GNConfig *m_config;
 }
 
@@ -20,5 +21,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *button;
 @property (nonatomic, retain) IBOutlet UILabel *trackName;
 @property (nonatomic, retain) Deezer *deezer;
+@property (nonatomic, retain) IBOutlet ListeningView *listeningView;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 
 @end
