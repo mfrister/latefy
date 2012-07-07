@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "deezer.h"
 
 @class GNConfig;
 
@@ -16,8 +17,8 @@
 }
 
 @property (nonatomic, retain) GNConfig *config;
-
 @property (nonatomic, retain) IBOutlet UIButton *button;
 @property (nonatomic, retain) IBOutlet UILabel *trackName;
+@property (nonatomic, retain) Deezer *deezer;
 
 @end

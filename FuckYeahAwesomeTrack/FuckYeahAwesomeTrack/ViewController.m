@@ -23,6 +23,7 @@
 @synthesize config = m_config;
 @synthesize button;
 @synthesize trackName;
+@synthesize deezer;
 
 - (void)viewDidLoad
 {
@@ -59,6 +60,8 @@
     // Invoke recognition operation
     [GNOperations recognizeMIDStreamFromMic: searchResultReady config: self.config];
 
+//    deezer = [[Deezer alloc] init];
+//    [deezer authorize];
 }
 
 @end
