@@ -14,19 +14,38 @@
 #import <GracenoteMusicID/GNSearchResultReady.h>
 #import <GracenoteMusicID/GNSearchResponse.h>
 #import <GracenoteMusicID/GNOperations.h>
+#import <GracenoteMusicID/GNOperationStatusChanged.h>
+#import <GracenoteMusicID/GNStatus.h>
 
 @interface ViewController ()
 
 @end
 
-// Result-ready object implements GNSearchResultReady protocol
-@ interface ApplicationSearchResultReady : NSObject <GNSearchResultReady>
+// Result-ready object implements GNSearchResultReady and
+// GNOperationStatusChanged protocols
+@ interface SearchResultsStatusReady : NSObject <GNSearchResultReady, GNOperationStatusChanged>
 {
 }
-@end
+@ end
 
-// Provide implementation for GNResultReady method
-@ implementation ApplicationSearchResultReady
+// Provide implementation for GNOperationStatusChanged method
+@ implementation SearchResultsStatusReady
+// Method to handle the status changed updates from the operation
+- (void) GNStatusChanged: (GNStatus*) status
+{
+    NSString* msg;
+    
+    if (status.status == RECORDING)
+    {
+        msg = [NSString stringWithFormat: @"%@ %d@", status.message, status.percentDone, @"%"];
+    }
+    else {
+        msg = status.message;
+    }
+    NSLog(@"%@", msg);
+}
+
+// Method to handle result returned from operation
 - (void) GNResultReady: (GNSearchResult*) result
 {
     if ([result isFailure]) {
@@ -68,7 +87,7 @@
     NSLog(@"Fingerprint start");
     
     // Create result-ready object to receive recognition result
-    ApplicationSearchResultReady *searchResultReady = [ApplicationSearchResultReady alloc];
+    SearchResultsStatusReady *searchResultReady = [SearchResultsStatusReady alloc];
     // Invoke recognition operation
     [GNOperations recognizeMIDStreamFromMic: searchResultReady config: self.config];
 }
