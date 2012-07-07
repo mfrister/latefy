@@ -80,6 +80,7 @@
 		046A9FD615A8560300769F29 /* FuckYeahAwesomeTrack */ = {
 			isa = PBXGroup;
 			children = (
+				F86491FC15A8583E00BCAB03 /* resources */,
 				046A9FDF15A8560300769F29 /* AppDelegate.h */,
 				046A9FE015A8560300769F29 /* AppDelegate.m */,
 				046A9FE215A8560300769F29 /* ViewController.h */,
@@ -99,6 +100,13 @@
 				046A9FDE15A8560300769F29 /* FuckYeahAwesomeTrack-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F86491FC15A8583E00BCAB03 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
