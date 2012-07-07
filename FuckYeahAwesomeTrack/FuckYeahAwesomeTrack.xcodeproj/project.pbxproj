@@ -26,6 +26,9 @@
 		046A9FE115A8560300769F29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A9FE015A8560300769F29 /* AppDelegate.m */; };
 		046A9FE415A8560300769F29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A9FE315A8560300769F29 /* ViewController.m */; };
 		046A9FE715A8560300769F29 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046A9FE515A8560300769F29 /* ViewController.xib */; };
+		AC53667315A89BC2001E848D /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = AC53666F15A89BC2001E848D /* CHANGELOG.md */; };
+		AC53667415A89BC2001E848D /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AC53667115A89BC2001E848D /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc "; }; };
+		AC53667515A89BC2001E848D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AC53667215A89BC2001E848D /* README.md */; };
 		ACE1902A15A88696000B5CD3 /* Deezer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE1902915A88696000B5CD3 /* Deezer.m */; };
 		F863A01915A85EF000595058 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F863A01815A85EF000595058 /* icon.png */; };
 		F863A01B15A85EF500595058 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F863A01A15A85EF500595058 /* icon@2x.png */; };
@@ -57,6 +60,10 @@
 		046A9FE315A8560300769F29 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		046A9FE615A8560300769F29 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		AC00C20C15A86300007D8781 /* Secrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Secrets.h; path = "../../../../Dropbox/Fuck-Yeah-Awesome-Track/Secrets.h"; sourceTree = "<group>"; };
+		AC53666F15A89BC2001E848D /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		AC53667015A89BC2001E848D /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		AC53667115A89BC2001E848D /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		AC53667215A89BC2001E848D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		ACA816CD15A8640C00C218DE /* GracenoteMusicID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GracenoteMusicID.framework; path = Frameworks/GracenoteMusicID.framework; sourceTree = "<group>"; };
 		ACA816CE15A8640C00C218DE /* libDeezer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libDeezer.framework; path = Frameworks/libDeezer.framework; sourceTree = "<group>"; };
 		ACE1902815A88696000B5CD3 /* Deezer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deezer.h; sourceTree = "<group>"; };
@@ -106,6 +113,7 @@
 				ACA816CE15A8640C00C218DE /* libDeezer.framework */,
 				F863A01A15A85EF500595058 /* icon@2x.png */,
 				F863A01815A85EF000595058 /* icon.png */,
+				AC53666E15A89BC2001E848D /* JSONKit */,
 				046A9FD615A8560300769F29 /* FuckYeahAwesomeTrack */,
 				046A9FCF15A8560300769F29 /* Frameworks */,
 				046A9FCD15A8560300769F29 /* Products */,
@@ -159,6 +167,17 @@
 				046A9FDE15A8560300769F29 /* FuckYeahAwesomeTrack-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC53666E15A89BC2001E848D /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				AC53666F15A89BC2001E848D /* CHANGELOG.md */,
+				AC53667015A89BC2001E848D /* JSONKit.h */,
+				AC53667115A89BC2001E848D /* JSONKit.m */,
+				AC53667215A89BC2001E848D /* README.md */,
+			);
+			path = JSONKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +234,8 @@
 				046A9FE715A8560300769F29 /* ViewController.xib in Resources */,
 				F863A01915A85EF000595058 /* icon.png in Resources */,
 				F863A01B15A85EF500595058 /* icon@2x.png in Resources */,
+				AC53667315A89BC2001E848D /* CHANGELOG.md in Resources */,
+				AC53667515A89BC2001E848D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +252,7 @@
 				041D9F8F15A8833A009409D3 /* Gracenote.m in Sources */,
 				ACE1902A15A88696000B5CD3 /* Deezer.m in Sources */,
 				F863A04615A879B000595058 /* ListeningView.m in Sources */,
+				AC53667415A89BC2001E848D /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

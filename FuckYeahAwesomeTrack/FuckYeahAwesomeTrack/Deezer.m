@@ -6,8 +6,9 @@
 //
 //
 
-#import "Deezer.h"
+#import "JSONKit.h"
 #import "libDeezer/DeezerConnect.h"
+#import "Deezer.h"
 #import "Secrets.h"
 
 
@@ -21,8 +22,8 @@
 @synthesize query;
 
 - (void)addTrackWithArtist: (NSString*) artist andTitle: (NSString*) title {
-    [self authorize];
     query = [[NSString alloc] initWithFormat:@"%@ %@", artist, title];
+    [self authorize];
 }
 
 - (void)findTrack {
@@ -46,6 +47,29 @@
     NSMutableArray* permissionsArray = [NSMutableArray arrayWithObjects:@"basic_access", @"manage_library", nil];
     [deezerConnect authorize:permissionsArray];
 }
+
+- (void) handleSearchResponse:(NSData *)data {
+    query = nil;
+    NSDictionary *response = [data objectFromJSONData];
+    NSNumber *resultCount = [response objectForKey:@"total"];
+    NSLog(@"Track count: %@", resultCount);
+    if([resultCount intValue] == 0) {
+        NSLog(@"Warning: No tracks found.");
+        // TODO display some message
+        return;
+    }
+    NSDictionary *track = [[response objectForKey:@"data"] objectAtIndex:0];
+    NSString *trackId = [track objectForKey:@"id"];
+    NSLog(@"Found track with ID: %@", trackId);
+//    [self addTrackWithId: trackId];
+}
+
+//- (void) addTrackWithId:(NSString *)trackId {
+//    NSString* servicePath =@"playlist/{playlist_id}/tracks	";
+//    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: query, @"q", nil];
+//    DeezerRequest* request = [deezerConnect createRequestWithServicePath:servicePath params: params delegate:self];
+//    [deezerConnect launchAsyncRequest:request];
+//}
 
 - (void)retrieveTokenAndExpirationDate {
     NSUserDefaults* standardUserDefaults = [NSUserDefaults standardUserDefaults];
@@ -77,8 +101,14 @@
 }
 
 - (void)request:(DeezerRequest *)request didReceiveResponse:(NSData *)data {
-    query = nil;
     NSLog(@"Deezer response");
+
+    if(!query) {
+        NSLog(@"Warning: query was nil, ignoring response");
+        return;
+        // TODO handle other responses
+    }
+    [self handleSearchResponse: data];
 }
 
 - (void)request:(DeezerRequest *)request didFailWithError:(NSError *)error {
