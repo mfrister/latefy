@@ -14,8 +14,9 @@
 
 @interface ViewController : UIViewController 
 {
-  GNConfig *m_config;
 }
+
+- (void) setPercent:(CGFloat) percent;
 
 @property (nonatomic, retain) GNConfig *config;
 @property (nonatomic, retain) IBOutlet UIButton *button;

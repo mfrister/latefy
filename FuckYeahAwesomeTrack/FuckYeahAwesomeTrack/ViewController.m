@@ -15,7 +15,7 @@
 
 @implementation ViewController
 
-@synthesize config = m_config;
+@synthesize config;
 @synthesize button;
 @synthesize trackName;
 @synthesize deezer;

@@ -29,6 +29,7 @@
     if (status.status == RECORDING)
     {
         msg = [NSString stringWithFormat: @"%@ %d@", status.message, status.percentDone, @"%"];
+        [ controller setPercent: status.percentDone];
     }
     else {
         msg = status.message;
