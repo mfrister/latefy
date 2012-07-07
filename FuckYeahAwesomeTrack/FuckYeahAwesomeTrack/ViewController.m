@@ -17,12 +17,13 @@
 
 @synthesize config;
 @synthesize button;
+@synthesize deezerButton;
 @synthesize trackName;
 @synthesize artistName;
-@synthesize albumName;
 @synthesize deezer;
 @synthesize listeningView;
 @synthesize imageView;
+@synthesize message;
 
 - (void)viewDidLoad
 {
@@ -33,7 +34,7 @@
 	
 	trackName.text = @"";
 	artistName.text = @"";
-	albumName.text = @"";
+	message.text = @"";
 }
 
 - (void)viewDidUnload
@@ -53,7 +54,8 @@
 	imageView.hidden = YES;
 	trackName.text = @"";
 	artistName.text = @"";
-	albumName.text = @"";
+	message.text = @"";
+	[self setPercent:0];
 	
 	NSLog(@"Button touched");
     NSLog(@"Fingerprint start");
@@ -62,6 +64,11 @@
 
     //deezer = [[Deezer alloc] init];
     //[deezer addTrackWithArtist:@"Eminem" andTitle:@"My name is"];
+}
+
+- (IBAction)addToDeezer:(id)sender
+{
+	NSLog(@"Add to DEEZER Button touched");
 }
 
 - (void) setPercent:(CGFloat) percent

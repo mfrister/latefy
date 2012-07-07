@@ -71,9 +71,6 @@
 			
             controller.trackName.text = best.trackTitle;
             controller.artistName.text = best.artist;
-            controller.albumName.text = [NSString stringWithFormat:@"%@ (%@)",
-										 best.albumTitle,
-										 best.albumReleaseYear];
         }
     }
 	
