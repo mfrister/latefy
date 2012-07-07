@@ -18,6 +18,7 @@
 @synthesize config = m_config;
 @synthesize button;
 @synthesize trackName;
+@synthesize deezer;
 
 - (void)viewDidLoad
 {
@@ -44,6 +45,9 @@
     NSLog(@"Fingerprint start");
 
     [Gracenote fingerprint: self];
+
+    //    deezer = [[Deezer alloc] init];
+    //    [deezer authorize];
 }
 
 @end

@@ -26,6 +26,7 @@
 		046A9FE115A8560300769F29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A9FE015A8560300769F29 /* AppDelegate.m */; };
 		046A9FE415A8560300769F29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A9FE315A8560300769F29 /* ViewController.m */; };
 		046A9FE715A8560300769F29 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046A9FE515A8560300769F29 /* ViewController.xib */; };
+		ACE1902A15A88696000B5CD3 /* Deezer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE1902915A88696000B5CD3 /* Deezer.m */; };
 		F863A01915A85EF000595058 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F863A01815A85EF000595058 /* icon.png */; };
 		F863A01B15A85EF500595058 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F863A01A15A85EF500595058 /* icon@2x.png */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,8 @@
 		AC00C20C15A86300007D8781 /* Secrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Secrets.h; path = "../../../../Dropbox/Fuck-Yeah-Awesome-Track/Secrets.h"; sourceTree = "<group>"; };
 		ACA816CD15A8640C00C218DE /* GracenoteMusicID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GracenoteMusicID.framework; path = Frameworks/GracenoteMusicID.framework; sourceTree = "<group>"; };
 		ACA816CE15A8640C00C218DE /* libDeezer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libDeezer.framework; path = Frameworks/libDeezer.framework; sourceTree = "<group>"; };
+		ACE1902815A88696000B5CD3 /* Deezer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deezer.h; sourceTree = "<group>"; };
+		ACE1902915A88696000B5CD3 /* Deezer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deezer.m; sourceTree = "<group>"; };
 		F863A01815A85EF000595058 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F863A01A15A85EF500595058 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +139,8 @@
 				046A9FD715A8560300769F29 /* Supporting Files */,
 				041D9F8D15A8833A009409D3 /* Gracenote.h */,
 				041D9F8E15A8833A009409D3 /* Gracenote.m */,
+				ACE1902815A88696000B5CD3 /* Deezer.h */,
+				ACE1902915A88696000B5CD3 /* Deezer.m */,
 			);
 			path = FuckYeahAwesomeTrack;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				046A9FE115A8560300769F29 /* AppDelegate.m in Sources */,
 				046A9FE415A8560300769F29 /* ViewController.m in Sources */,
 				041D9F8F15A8833A009409D3 /* Gracenote.m in Sources */,
+				ACE1902A15A88696000B5CD3 /* Deezer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
