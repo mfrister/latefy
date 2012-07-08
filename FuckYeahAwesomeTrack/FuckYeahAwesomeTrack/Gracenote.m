@@ -81,7 +81,7 @@
             GNCoverArt *coverArt = best.coverArt;
             NSLog(@"ArtURL: %@", coverArt.url);
             
-            [controller success: nil];
+            [controller findTrackInDeezerWithArtist: best.artist withTitle: best.trackTitle];
             
 //            controller.trackName.text = best.artist;
 //            [controller loadImagefromURL:coverArt.data];
