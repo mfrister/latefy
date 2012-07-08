@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "libDeezer/DeezerConnect.h"
 #import "RecordingController.h"
+#import "ResultController.h"
 
 @class RecordingController;
 
@@ -24,9 +25,10 @@
 @property (nonatomic, retain) NSString *trackId;
 @property (nonatomic) int requestType;
 @property (nonatomic, assign) RecordingController *recordingController;
+@property (nonatomic, retain) ResultController *resultController;
 
 - (id)initWithRecordingController: (RecordingController *) controller;
-- (void)addTrack;
+- (void)addTrackWithController: (ResultController*)controller;
 - (void)authorize;
 - (void)findTrack:(NSString *)title withArtist: (NSString *)artist;
 - (void)handleFindTrackResponse: (NSData*)data;

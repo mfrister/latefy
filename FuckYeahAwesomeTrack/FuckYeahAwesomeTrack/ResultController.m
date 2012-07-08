@@ -20,6 +20,7 @@
 @synthesize artistName;
 @synthesize imageView;
 @synthesize addToDeezerButton;
+@synthesize deezerStatus;
 
 - (id)init
 {
@@ -62,7 +63,7 @@
 {
     RecordingController* recordingController = (RecordingController *)[ self presentingViewController ];
     addToDeezerButton.hidden = YES;
-    [recordingController.deezer addTrack];
+    [recordingController.deezer addTrackWithController: self];
 }
 
 @end

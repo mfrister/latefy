@@ -23,6 +23,7 @@
 @synthesize trackId;
 @synthesize requestType;
 @synthesize recordingController;
+@synthesize resultController;
 
 - (id)initWithRecordingController: (RecordingController *) controller
 {
@@ -32,7 +33,9 @@
     }
     return self;
 }
-- (void)addTrack {
+- (void)addTrackWithController: (ResultController*)controller
+{
+    resultController = controller;
     [self authorize];
     [self findPlaylist];
 }
@@ -131,6 +134,7 @@
 - (void) handleAddTrackToPlaylistResponse:(NSData*)data
 {
     NSLog(@"Yay! Track was probably added to a playlist.");
+    resultController.deezerStatus.hidden = NO;
     // TODO
 }
 
