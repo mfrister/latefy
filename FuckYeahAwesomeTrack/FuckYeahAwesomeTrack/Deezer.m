@@ -38,7 +38,7 @@
         return;
     }
     NSLog(@"Deezer authorize");
-    NSMutableArray* permissionsArray = [NSMutableArray arrayWithObjects:@"basic_access", @"manage_library", nil];
+    NSMutableArray* permissionsArray = [NSMutableArray arrayWithObjects:@"basic_access", @"manage_library", @"offline_access", nil];
     [deezerConnect authorize:permissionsArray];
 }
 
