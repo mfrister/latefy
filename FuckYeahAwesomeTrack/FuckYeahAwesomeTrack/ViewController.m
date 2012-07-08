@@ -85,7 +85,7 @@
 - (void) sendTrackToDeezerWithArtist:(NSString *)artist withTitle:(NSString *)title
 {
     deezer = [[Deezer alloc] init];
-    [deezer addTrackWithArtist:artist andTitle:title];
+//    [deezer addTrackWithArtist:artist andTitle:title];
 }
 
 @end
