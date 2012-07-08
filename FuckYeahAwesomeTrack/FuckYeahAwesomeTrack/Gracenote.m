@@ -33,14 +33,14 @@
         case WEBSERVICES:
             [controller setPercent:100.0];
             [controller startAnimation ];
-//            controller.title.text = @"Analyzing";
+            controller.navBar.topItem.title = @"Analyzing";
             break;
 			
 		case RECORDING:
             message = [NSString stringWithFormat: @"%@ %d@", status.message, status.percentDone];
             [controller setPercent:status.percentDone];
             [controller stopAnimation ];
-//            controller.title.text = @"Recording";
+            controller.navBar.topItem.title = @"Recording";
             break;
 			
 		default:
