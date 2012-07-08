@@ -14,6 +14,7 @@
 #define DEEZER_TOKEN_KEY @"DeezerTokenKey"
 #define DEEZER_EXPIRATION_DATE_KEY @"DeezerExpirationDateKey"
 #define DEEZER_USER_ID_KEY @"DeezerUserId"
+#define PLAYLIST_TITLE @"Latefy"
 
 @implementation Deezer
 
@@ -70,13 +71,18 @@
 
 - (void) handleFindPlaylistResponse: (NSData*) data {
     NSDictionary *response = [data objectFromJSONData];
-    if([[response objectForKey:@"total"] intValue] == 0) {
-        NSLog(@"Warning: no playlist found");
+    NSArray *playlists = [response objectForKey:@"data"];
+
+    NSUInteger ourPlaylistIndex = [playlists indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        return [[(NSDictionary*)obj objectForKey:@"title"] isEqual: PLAYLIST_TITLE];
+    }];
+
+    if(ourPlaylistIndex == NSNotFound) {
+        NSLog(@"Warning: playlist %@ not found", PLAYLIST_TITLE);
         return;
     }
-    NSString *playlistId = [[[response objectForKey:@"data"]
-                                objectAtIndex:0]
-                                    objectForKey: @"id"];
+    NSString *playlistId = [[playlists objectAtIndex:ourPlaylistIndex] objectForKey:@"id"];
+
     NSLog(@"Got playlist with ID %@", playlistId);
     [self addTrackToPlaylistWithId: playlistId];
 }
