@@ -8,19 +8,19 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "StartController.h"
 
 @implementation AppDelegate
 
-@synthesize window = _window;
-@synthesize viewController = _viewController;
+@synthesize window;
+@synthesize startController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    self.startController = [[StartController alloc] init];
+    self.window.rootViewController = self.startController;
     [self.window makeKeyAndVisible];
 	
     return YES;
@@ -42,7 +42,7 @@
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 	
-	self.viewController.button.hidden = NO;
+//	self.viewController.button.hidden = NO;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

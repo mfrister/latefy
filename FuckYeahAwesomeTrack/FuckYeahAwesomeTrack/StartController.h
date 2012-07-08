@@ -1,5 +1,5 @@
 //
-//  StartControllerViewController.h
+//  StartController.h
 //  FuckYeahAwesomeTrack
 //
 //  Created by Stefan Hintz on 08.07.12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StartControllerViewController : UIViewController
+@interface StartController : UIViewController
 
 @end
