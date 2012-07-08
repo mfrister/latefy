@@ -59,6 +59,39 @@
 							</object>
 						</array>
 					</object>
+					<object class="IBUILabel" id="178910209">
+						<reference key="NSNextResponder" ref="520048944"/>
+						<int key="NSvFlags">-2147483356</int>
+						<string key="NSFrame">{{0, 88}, {320, 21}}</string>
+						<reference key="NSSuperview" ref="520048944"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="8459382"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<bool key="IBUIOpaque">NO</bool>
+						<bool key="IBUIClipsSubviews">YES</bool>
+						<int key="IBUIContentMode">7</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<string key="IBUIText">Sorry, we couldn't find that track</string>
+						<object class="NSColor" key="IBUITextColor" id="432953423">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MQA</bytes>
+						</object>
+						<reference key="IBUIHighlightedColor" ref="432953423"/>
+						<int key="IBUIBaselineAdjustment">0</int>
+						<float key="IBUIMinimumFontSize">10</float>
+						<int key="IBUINumberOfLines">2</int>
+						<int key="IBUITextAlignment">1</int>
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="1020076801">
+							<int key="type">1</int>
+							<double key="pointSize">17</double>
+						</object>
+						<object class="NSFont" key="IBUIFont" id="796566469">
+							<string key="NSName">Helvetica</string>
+							<double key="NSSize">17</double>
+							<int key="NSfFlags">16</int>
+						</object>
+					</object>
 					<object class="IBUIButton" id="8459382">
 						<reference key="NSNextResponder" ref="520048944"/>
 						<int key="NSvFlags">292</int>
@@ -72,10 +105,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<string key="IBUINormalTitle">What's that track?</string>
-						<object class="NSColor" key="IBUIHighlightedTitleColor" id="432953423">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MQA</bytes>
-						</object>
+						<reference key="IBUIHighlightedTitleColor" ref="432953423"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC45NTc0Mjk4NDY5IDAuOTU3NDI5ODQ2OSAwLjk1NzQyOTg0NjkAA</bytes>
@@ -95,36 +125,6 @@
 						<object class="NSFont" key="IBUIFont">
 							<string key="NSName">Helvetica-Bold</string>
 							<double key="NSSize">16</double>
-							<int key="NSfFlags">16</int>
-						</object>
-					</object>
-					<object class="IBUILabel" id="178910209">
-						<reference key="NSNextResponder" ref="520048944"/>
-						<int key="NSvFlags">-2147483356</int>
-						<string key="NSFrame">{{0, 88}, {320, 21}}</string>
-						<reference key="NSSuperview" ref="520048944"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="8459382"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIOpaque">NO</bool>
-						<bool key="IBUIClipsSubviews">YES</bool>
-						<int key="IBUIContentMode">7</int>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<string key="IBUIText">Sorry, we couldn't find that track</string>
-						<reference key="IBUITextColor" ref="432953423"/>
-						<reference key="IBUIHighlightedColor" ref="432953423"/>
-						<int key="IBUIBaselineAdjustment">0</int>
-						<float key="IBUIMinimumFontSize">10</float>
-						<int key="IBUINumberOfLines">2</int>
-						<int key="IBUITextAlignment">1</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="1020076801">
-							<int key="type">1</int>
-							<double key="pointSize">17</double>
-						</object>
-						<object class="NSFont" key="IBUIFont" id="796566469">
-							<string key="NSName">Helvetica</string>
-							<double key="NSSize">17</double>
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
@@ -10032,6 +10032,14 @@ AAEAAQABA</bytes>
 					<int key="connectionID">12</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">errorLabel</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="178910209"/>
+					</object>
+					<int key="connectionID">14</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">start:</string>
 						<reference key="source" ref="8459382"/>
@@ -10065,8 +10073,8 @@ AAEAAQABA</bytes>
 						<reference key="object" ref="520048944"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="578608224"/>
-							<reference ref="178910209"/>
 							<reference ref="8459382"/>
+							<reference ref="178910209"/>
 							<reference ref="561010807"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -10117,13 +10125,24 @@ AAEAAQABA</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">13</int>
+			<int key="maxID">14</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">StartController</string>
 					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">errorLabel</string>
+						<string key="NS.object.0">UILabel</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">errorLabel</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">errorLabel</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/StartController.h</string>

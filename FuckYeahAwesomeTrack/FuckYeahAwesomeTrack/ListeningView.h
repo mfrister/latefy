@@ -13,4 +13,7 @@
 // 0 .. 100
 @property (nonatomic, assign) CGFloat percent;
 
+// 0 .. 1
+@property (nonatomic, assign) CGFloat sizeFactor;
+
 @end
