@@ -83,13 +83,11 @@
 
 - (void) addTrackToPlaylistWithId:(NSString *)playlistId {
     requestType = DEEZER_ADD_TRACK_TO_PLAYLIST;
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: trackId, @"songs", @"POST", @"request_method", nil];
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: trackId, @"songs", nil];
     
-    NSString *path = [[NSString alloc] initWithFormat:@"playlist/%@/tracks", trackId];
-//    DeezerRequest* request = [deezerConnect createRequestWithServicePath:path params:params httpMethod:HttpMethod_POST delegate:self];
-//    [deezerConnect launchAsyncRequest:request];
-//    
-    [self request: path params: params];
+    NSString *path = [[NSString alloc] initWithFormat:@"playlist/%@/tracks", playlistId];
+    DeezerRequest* request = [deezerConnect createRequestWithServicePath:path params:params httpMethod:HttpMethod_POST delegate:self];
+    [deezerConnect launchAsyncRequest:request];
 }
 
 - (void) handleAddTrackToPlaylistResponse: (NSData*)data {
