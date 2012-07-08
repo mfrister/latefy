@@ -16,6 +16,8 @@
 {
 }
 
+- (IBAction)success:(id)sender;
+- (IBAction)failed:(id)sender;
 - (void) setPercent:(CGFloat) percent;
 
 @property (nonatomic, retain) GNConfig *gracenoteConfig;

@@ -59,6 +59,8 @@
         if ([result isAnySearchNoMatchStatus]) 
 		{
             NSLog(@"NO_MATCH\n");
+            [controller failed: nil];
+            
             //controller.trackName.text = @"Not Found :("; 
             
 //            [ controller 
@@ -78,6 +80,8 @@
             
             GNCoverArt *coverArt = best.coverArt;
             NSLog(@"ArtURL: %@", coverArt.url);
+            
+            [controller success: nil];
             
 //            controller.trackName.text = best.artist;
 //            [controller loadImagefromURL:coverArt.data];
