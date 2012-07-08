@@ -22,6 +22,8 @@
 - (IBAction)failed:(id)sender;
 - (void) setPercent:(CGFloat) percent;
 - (void) findTrackInDeezerWithArtist:(NSString *)artist withTitle:(NSString *)title withCover: (GNCoverArt *) cover;
+- (void)startAnimation;
+- (void)stopAnimation;
 
 @property (nonatomic, retain) GNConfig *gracenoteConfig;
 @property (nonatomic, retain) GNCoverArt *gracenoteCoverArt;

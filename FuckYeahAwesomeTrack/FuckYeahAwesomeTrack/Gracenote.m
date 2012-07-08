@@ -32,11 +32,15 @@
         case FINGERPRINTING:
         case WEBSERVICES:
             [controller setPercent:100.0];
+            [controller startAnimation ];
+//            controller.title.text = @"Analyzing";
             break;
 			
 		case RECORDING:
             message = [NSString stringWithFormat: @"%@ %d@", status.message, status.percentDone];
             [controller setPercent:status.percentDone];
+            [controller stopAnimation ];
+//            controller.title.text = @"Recording";
             break;
 			
 		default:

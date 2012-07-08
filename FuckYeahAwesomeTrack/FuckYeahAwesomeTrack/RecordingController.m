@@ -45,29 +45,8 @@
     
 	self.gracenoteConfig = Gracenote.makeConfig;        
 
-    NSLog(@"Fingerprint start");
-  //  [self findTrackInDeezerWithArtist: @"Eminem" withTitle: @"Loose Yourself" ];
-    
-//	[Gracenote fingerprint: self];
-	
-	
-	
-	
-	
-	
-	
-	
 	// TODO: start the anination after fingerprinting !!!
-	[self startAnimation];
-
-
-
-
-
-
-
-
-
+	//[self startAnimation];
 }
 
 - (void)viewDidUnload
@@ -82,7 +61,8 @@
 	[super viewWillAppear:animated];
 	
 	self.listeningView.sizeFactor = 1;
-    
+
+    NSLog(@"Fingerprint start");
     [Gracenote fingerprint: self];
 }
 
@@ -133,8 +113,6 @@
 - (void)refresh
 {
 	static double angle = 0;
-	
-	NSLog(@"refresh animation");
 	
 	self.listeningView.sizeFactor = (cos(angle+=0.1)+3)*0.25;
 }
