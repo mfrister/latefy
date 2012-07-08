@@ -55,7 +55,7 @@
 		04639A9915A865E700E2D534 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		04639A9B15A865EC00E2D534 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		04639A9D15A865F800E2D534 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
-		046A9FCC15A8560300769F29 /* FuckYeahAwesomeTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FuckYeahAwesomeTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		046A9FCC15A8560300769F29 /* Latefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Latefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046A9FD015A8560300769F29 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		046A9FD215A8560300769F29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		046A9FD415A8560300769F29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,7 +138,7 @@
 		046A9FCD15A8560300769F29 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				046A9FCC15A8560300769F29 /* FuckYeahAwesomeTrack.app */,
+				046A9FCC15A8560300769F29 /* Latefy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,7 +219,7 @@
 			);
 			name = FuckYeahAwesomeTrack;
 			productName = FuckYeahAwesomeTrack;
-			productReference = 046A9FCC15A8560300769F29 /* FuckYeahAwesomeTrack.app */;
+			productReference = 046A9FCC15A8560300769F29 /* Latefy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -367,7 +367,7 @@
 					"\"$(SRCROOT)/Frameworks/libDeezer.framework\"",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Latefy;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -388,7 +388,7 @@
 					"\"$(SRCROOT)/Frameworks/libDeezer.framework\"",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Latefy;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
