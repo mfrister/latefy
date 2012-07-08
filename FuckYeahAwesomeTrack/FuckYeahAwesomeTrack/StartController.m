@@ -32,7 +32,9 @@
 	NSLog(@"Start Button touched");
 	
 	UIViewController *controller = [[RecordingController alloc] init];
-	[self.navigationController pushViewController:controller animated:YES];
+	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	
+	[self presentViewController:controller animated:YES completion:nil];
 }
 
 @end
