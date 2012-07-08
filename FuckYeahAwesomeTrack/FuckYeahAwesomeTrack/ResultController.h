@@ -13,5 +13,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *trackName;
 @property (nonatomic, retain) IBOutlet UILabel *artistName;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (nonatomic, retain) IBOutlet UIButton *addToDeezerButton;
 
+- (IBAction)addToDeezer: (id)sender;
 @end

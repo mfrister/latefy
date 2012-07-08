@@ -32,9 +32,9 @@
     }
     return self;
 }
-- (void)addTrackWithArtist: (NSString*) artist andTitle: (NSString*) title {
-//    query = [[NSString alloc] initWithFormat:@"%@ %@", artist, title];
+- (void)addTrack {
     [self authorize];
+    [self findPlaylist];
 }
 
 -(void) authorize {

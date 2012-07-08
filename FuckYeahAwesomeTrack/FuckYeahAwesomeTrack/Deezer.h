@@ -26,7 +26,7 @@
 @property (nonatomic, assign) RecordingController *recordingController;
 
 - (id)initWithRecordingController: (RecordingController *) controller;
-- (void)addTrackWithArtist: (NSString*) artist andTitle: (NSString*) title;
+- (void)addTrack;
 - (void)authorize;
 - (void)findTrack:(NSString *)title withArtist: (NSString *)artist;
 - (void)handleFindTrackResponse: (NSData*)data;

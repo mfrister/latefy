@@ -19,6 +19,7 @@
 @synthesize trackName;
 @synthesize artistName;
 @synthesize imageView;
+@synthesize addToDeezerButton;
 
 - (id)init
 {
@@ -55,6 +56,13 @@
 {
 	[imageView setImage:[[UIImage alloc] initWithData:imageData]];
 	imageView.hidden = NO;
+}
+
+- (IBAction)addToDeezer: (id)sender
+{
+    RecordingController* recordingController = (RecordingController *)[ self presentingViewController ];
+    addToDeezerButton.hidden = YES;
+    [recordingController.deezer addTrack];
 }
 
 @end
