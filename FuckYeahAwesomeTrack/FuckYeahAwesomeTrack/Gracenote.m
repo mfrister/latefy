@@ -76,12 +76,6 @@
 			
             controller.trackName.text = best.trackTitle;
             controller.artistName.text = best.artist;
-
-            controller.albumName.text =
-                [ NSString stringWithFormat:@"%@ (%@)",
-                    best.albumTitle,
-                    best.albumReleaseYear
-                 ];
             
             [ controller 
                 sendTrackToDeezerWithArtist: best.artist
@@ -103,10 +97,10 @@
 {
 	GNConfig *config = [GNConfig init:GRACENOTE_CLIENT_ID];
 	
-	[config setProperty: @"debugEnabled" value:@"1"];
-	[config setProperty: @"content.musicId.queryPreference.singleBestMatch" value:@"true"];
-	[config setProperty: @"content.coverArt" value:@"true"];
-	[config setProperty: @"content.coverArt.sizePreference" value:@"medium, small"];            
+	[config setProperty:@"debugEnabled" value:@"1"];
+	[config setProperty:@"content.musicId.queryPreference.singleBestMatch" value:@"true"];
+	[config setProperty:@"content.coverArt" value:@"true"];
+	[config setProperty:@"content.coverArt.sizePreference" value:@"medium small"];            
 	
 	return config;
 }

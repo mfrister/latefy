@@ -19,19 +19,13 @@
 
 @synthesize deezerConnect;
 @synthesize query;
+@synthesize trackId;
+@synthesize requestType;
 
 - (void)addTrackWithArtist: (NSString*) artist andTitle: (NSString*) title {
     query = [[NSString alloc] initWithFormat:@"%@ %@", artist, title];
     [self authorize];
 }
-
-- (void)findTrack {
-    NSString* servicePath =@"search";
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: query, @"q", nil];
-    DeezerRequest* request = [deezerConnect createRequestWithServicePath:servicePath params: params delegate:self];
-    [deezerConnect launchAsyncRequest:request];
-}
-
 
 -(void) authorize {
     if(!deezerConnect) {
@@ -47,7 +41,13 @@
     [deezerConnect authorize:permissionsArray];
 }
 
-- (void) handleSearchResponse:(NSData *)data {
+- (void)findTrack {
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: query, @"q", nil];
+    requestType = DEEZER_FIND_TRACK;
+    [self request: @"search" params: params];
+}
+
+- (void) handleFindTrackResponse:(NSData *)data {
     query = nil;
     NSDictionary *response = [data objectFromJSONData];
     NSNumber *resultCount = [response objectForKey:@"total"];
@@ -58,17 +58,49 @@
         return;
     }
     NSDictionary *track = [[response objectForKey:@"data"] objectAtIndex:0];
-    NSString *trackId = [track objectForKey:@"id"];
+    trackId = [track objectForKey:@"id"];
     NSLog(@"Found track with ID: %@", trackId);
-//    [self addTrackWithId: trackId];
+    [self findPlaylist];
 }
 
-//- (void) addTrackWithId:(NSString *)trackId {
-//    NSString* servicePath =@"playlist/{playlist_id}/tracks	";
-//    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: query, @"q", nil];
-//    DeezerRequest* request = [deezerConnect createRequestWithServicePath:servicePath params: params delegate:self];
+- (void) findPlaylist {
+    requestType = DEEZER_FIND_PLAYLIST;
+    [self request:@"/user/me/playlists" params: nil];
+}
+
+- (void) handleFindPlaylistResponse: (NSData*) data {
+    NSDictionary *response = [data objectFromJSONData];
+    if([[response objectForKey:@"total"] intValue] == 0) {
+        NSLog(@"Warning: no playlist found");
+        return;
+    }
+    NSString *playlistId = [[[response objectForKey:@"data"]
+                                objectAtIndex:0]
+                                    objectForKey: @"id"];
+    NSLog(@"Got playlist with ID %@", playlistId);
+    [self addTrackToPlaylistWithId: playlistId];
+}
+
+- (void) addTrackToPlaylistWithId:(NSString *)playlistId {
+    requestType = DEEZER_ADD_TRACK_TO_PLAYLIST;
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: trackId, @"songs", @"POST", @"request_method", nil];
+    
+    NSString *path = [[NSString alloc] initWithFormat:@"playlist/%@/tracks", trackId];
+//    DeezerRequest* request = [deezerConnect createRequestWithServicePath:path params:params httpMethod:HttpMethod_POST delegate:self];
 //    [deezerConnect launchAsyncRequest:request];
-//}
+//    
+    [self request: path params: params];
+}
+
+- (void) handleAddTrackToPlaylistResponse: (NSData*)data {
+    NSLog(@"Yay! Track was probably added to a playlist.");
+    // TODO
+}
+
+- (void)request: (NSString *)path params: (NSDictionary*) params {
+    DeezerRequest* request = [deezerConnect createRequestWithServicePath:path params: params delegate:self];
+    [deezerConnect launchAsyncRequest:request];
+}
 
 - (void)retrieveTokenAndExpirationDate {
     NSUserDefaults* standardUserDefaults = [NSUserDefaults standardUserDefaults];
@@ -101,13 +133,19 @@
 
 - (void)request:(DeezerRequest *)request didReceiveResponse:(NSData *)data {
     NSLog(@"Deezer response");
-
-    if(!query) {
-        NSLog(@"Warning: query was nil, ignoring response");
-        return;
-        // TODO handle other responses
+    switch(requestType) {
+        case DEEZER_FIND_TRACK:
+            [self handleFindTrackResponse: data];
+            break;
+        case DEEZER_FIND_PLAYLIST:
+            [self handleFindPlaylistResponse: data];
+            break;
+        case DEEZER_ADD_TRACK_TO_PLAYLIST:
+            [self handleAddTrackToPlaylistResponse: data];
+            break;
+        default:
+            NSLog(@"request:didReceiveResponse: Error: unknown requestType");
     }
-    [self handleSearchResponse: data];
 }
 
 - (void)request:(DeezerRequest *)request didFailWithError:(NSError *)error {

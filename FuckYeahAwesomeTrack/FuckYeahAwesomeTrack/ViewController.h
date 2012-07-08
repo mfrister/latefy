@@ -22,9 +22,10 @@
 
 @property (nonatomic, retain) GNConfig *config;
 @property (nonatomic, retain) IBOutlet UIButton *button;
+@property (nonatomic, retain) IBOutlet UIButton *deezerButton;
 @property (nonatomic, retain) IBOutlet UILabel *trackName;
 @property (nonatomic, retain) IBOutlet UILabel *artistName;
-@property (nonatomic, retain) IBOutlet UILabel *albumName;
+@property (nonatomic, retain) IBOutlet UILabel *message;
 @property (nonatomic, retain) Deezer *deezer;
 @property (nonatomic, retain) IBOutlet ListeningView *listeningView;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;

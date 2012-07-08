@@ -23,6 +23,19 @@
 	}
 }
 
+/* needs CALayer
+ 
++ (BOOL)needsDisplayForKey:(NSString *)key
+{
+    if ([key isEqualToString:@"percent"])
+	{
+        return YES;
+    }
+
+	return [super needsDisplayForKey:key];
+}
+*/
+
 #define radians(degrees) ((degrees)*M_PI/180)
 
 - (void)drawRect:(CGRect)rect
@@ -50,7 +63,7 @@
 	//// Oval Drawing
 //	UIBezierPath *ovalPath = [UIBezierPath bezierPathWithOvalInRect:CGRectInset(self.bounds, 20, 20)];
 	
-	UIBezierPath *ovalPath = [UIBezierPath bezierPathWithArcCenter:self.center radius:self.bounds.size.width/2 - 40 startAngle:0 endAngle:radians(percent*3.6) clockwise:YES];
+	UIBezierPath *ovalPath = [UIBezierPath bezierPathWithArcCenter:self.center radius:self.bounds.size.width/2 - 40 startAngle:radians(-90-percent*1.8) endAngle:radians(-90+percent*1.8) clockwise:YES];
 	[ovalPath addLineToPoint:self.center];
 	
 	CGContextSaveGState(context);
