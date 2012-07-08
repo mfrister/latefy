@@ -1,5 +1,5 @@
 //
-//  StartController.h
+//  RecordingController.h
 //  FuckYeahAwesomeTrack
 //
 //  Created by Stefan Hintz on 08.07.12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StartController : UIViewController
+@interface RecordingController : UIViewController
 
 @end

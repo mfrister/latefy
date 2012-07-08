@@ -24,18 +24,19 @@
 // Method to handle the status changed updates from the operation
 - (void) GNStatusChanged:(GNStatus *)status
 {
-    NSString *message;
+    NSString *message = status.message;;
 	
-    if (status.status == RECORDING)
-    {
-        message = [NSString stringWithFormat: @"%@ %d@", status.message, status.percentDone, @"%"];
-        [controller setPercent:status.percentDone];
+    switch(status.status) {
+        case GENERATING:
+        case FINGERPRINTING:
+        case WEBSERVICES:
+            [controller setPercent:100.0];
+            break;
+        case RECORDING:
+            message = [NSString stringWithFormat: @"%@ %d@", status.message, status.percentDone];
+            [controller setPercent:status.percentDone];
+            break;
     }
-    else 
-	{
-        message = status.message;
-    }
-    
 	NSLog(@"%@", message);
 }
 
