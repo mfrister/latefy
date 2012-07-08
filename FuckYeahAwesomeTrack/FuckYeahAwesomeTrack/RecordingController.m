@@ -8,6 +8,7 @@
 
 #import "RecordingController.h"
 #import "ResultController.h"
+#import "Deezer.h"
 
 @interface RecordingController ()
 
@@ -17,6 +18,7 @@
 
 @synthesize gracenoteConfig;
 @synthesize listeningView;
+@synthesize deezer;
 
 - (id)init
 {
@@ -38,7 +40,9 @@
 	self.gracenoteConfig = Gracenote.makeConfig;        
 
     NSLog(@"Fingerprint start");
-    [Gracenote fingerprint: self];
+    [self findTrackInDeezerWithArtist: @"Eminem" withTitle: @"Loose Yourself" ];
+    
+    // [Gracenote fingerprint: self];
 }
 
 - (void) setPercent:(CGFloat) percent
@@ -47,6 +51,12 @@
 	[UIView setAnimationDuration:1];
 	listeningView.percent = percent;
 	[UIView commitAnimations];
+}
+
+- (void) findTrackInDeezerWithArtist:(NSString *)artist withTitle:(NSString *)title
+{
+    deezer = [[Deezer alloc] initWithRecordingController: self];
+    [deezer findTrack:title withArtist:artist];    
 }
 
 - (IBAction)success:(id)sender

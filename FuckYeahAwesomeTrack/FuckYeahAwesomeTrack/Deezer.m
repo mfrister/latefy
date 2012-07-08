@@ -10,6 +10,7 @@
 #import "libDeezer/DeezerConnect.h"
 #import "Deezer.h"
 #import "Secrets.h"
+#import "RecordingController.h"
 
 #define DEEZER_TOKEN_KEY @"DeezerTokenKey"
 #define DEEZER_EXPIRATION_DATE_KEY @"DeezerExpirationDateKey"
@@ -21,7 +22,16 @@
 @synthesize query;
 @synthesize trackId;
 @synthesize requestType;
+@synthesize recordingController;
 
+- (id)initWithRecordingController: (RecordingController *) controller
+{
+    self = [super init];
+    if (self) {
+        self.recordingController = controller;
+    }
+    return self;
+}
 - (void)addTrackWithArtist: (NSString*) artist andTitle: (NSString*) title {
     query = [[NSString alloc] initWithFormat:@"%@ %@", artist, title];
     [self authorize];
@@ -41,8 +51,17 @@
     [deezerConnect authorize:permissionsArray];
 }
 
-- (void)findTrack {
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: query, @"q", nil];
+- (void)findTrack:(NSString *)title withArtist: (NSString *)artist
+{
+    NSLog(@"Finding Track in deezer");
+    NSDictionary *params = 
+        [NSDictionary 
+            dictionaryWithObjectsAndKeys: 
+                [[NSString alloc] initWithFormat:@"%@ %@", artist, title],
+                @"q",
+                nil
+        ];
+
     requestType = DEEZER_FIND_TRACK;
     [self request: @"search" params: params];
 }
@@ -60,7 +79,7 @@
     NSDictionary *track = [[response objectForKey:@"data"] objectAtIndex:0];
     trackId = [track objectForKey:@"id"];
     NSLog(@"Found track with ID: %@", trackId);
-    [self findPlaylist];
+    //[self findPlaylist];
 }
 
 - (void) findPlaylist {
@@ -118,7 +137,7 @@
 - (void)deezerDidLogin {
     NSLog(@"Deezer did login");
     [self saveTokenAndExpirationDate];
-    [self findTrack];
+    //[self findTrack];
 }
 
 - (void)deezerDidNotLogin:(BOOL)cancelled {

@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "libDeezer/DeezerConnect.h"
+#import "RecordingController.h"
+
+@class RecordingController;
 
 // values for requestType
 #define DEEZER_FIND_TRACK 1
@@ -21,9 +24,12 @@
 @property (nonatomic, retain) NSString *query;
 @property (nonatomic, retain) NSString *trackId;
 @property (nonatomic) int requestType;
+@property (nonatomic, assign) RecordingController *recordingController;
 
+- (id)initWithRecordingController: (RecordingController *) controller;
 - (void)addTrackWithArtist: (NSString*) artist andTitle: (NSString*) title;
 - (void)authorize;
+- (void)findTrack:(NSString *)title withArtist: (NSString *)artist;
 - (void)handleFindTrackResponse: (NSData*)data;
 - (void)findPlaylist;
 - (void)handleFindPlaylistResponse: (NSData*) data;
