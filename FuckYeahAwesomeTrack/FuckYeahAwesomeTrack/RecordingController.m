@@ -43,6 +43,7 @@
 
 - (void) setPercent:(CGFloat) percent
 {
+	// TODO: use UILayer for animations to work
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:1];
 	listeningView.percent = percent;

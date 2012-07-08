@@ -18,6 +18,11 @@
 - (id)init
 {
     self = [super initWithNibName:@"StartController" bundle:nil];
+	if (self)
+	{
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismiss) name:@"BACKTOSTART" object:nil];
+
+	}
 
     return self;
 }
@@ -35,6 +40,11 @@
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	
 	[self presentViewController:controller animated:YES completion:nil];
+}
+
+-(void)dismiss
+{
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end
