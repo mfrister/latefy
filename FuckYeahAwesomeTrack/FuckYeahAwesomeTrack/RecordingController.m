@@ -9,6 +9,7 @@
 #import "RecordingController.h"
 #import "ResultController.h"
 #import "Deezer.h"
+#import "StartController.h"
 #import <GracenoteMusicID/GNCoverArt.h>
 
 @interface RecordingController ()
@@ -22,6 +23,7 @@
 @synthesize gracenoteCoverArt;
 @synthesize listeningView;
 @synthesize deezer;
+@synthesize timer;
 
 
 - (id)init
@@ -44,6 +46,42 @@
 	self.gracenoteConfig = Gracenote.makeConfig;        
 
     NSLog(@"Fingerprint start");
+  //  [self findTrackInDeezerWithArtist: @"Eminem" withTitle: @"Loose Yourself" ];
+    
+//	[Gracenote fingerprint: self];
+	
+	
+	
+	
+	
+	
+	
+	
+	// TODO: start the anination after fingerprinting !!!
+	[self startAnimation];
+
+
+
+
+
+
+
+
+
+}
+
+- (void)viewDidUnload
+{
+	[self stopAnimation];
+
+	[super viewDidUnload];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	self.listeningView.sizeFactor = 1;
     
     [Gracenote fingerprint: self];
 }
@@ -71,6 +109,8 @@
 {
 	NSLog(@"Successfull found track");
 	
+	[self stopAnimation];
+
 	UIViewController *controller = [[ResultController alloc] init];
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	
@@ -81,7 +121,43 @@
 {
 	NSLog(@"Failed track finding");
 	
+	[self stopAnimation];
+	
+	StartController *startController = (StartController *)self.presentingViewController;
+	
+	startController.errorLabel.hidden = NO;
+	
 	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)refresh
+{
+	static double angle = 0;
+	
+	NSLog(@"refresh animation");
+	
+	self.listeningView.sizeFactor = (cos(angle+=0.1)+3)*0.25;
+}
+
+- (void)startAnimation
+{
+	NSLog(@"startAnimation");
+	
+	[self.timer invalidate];
+	self.timer = [NSTimer 
+				  scheduledTimerWithTimeInterval:1/30.0 
+				  target:self 
+				  selector:@selector(refresh) 
+				  userInfo:nil 
+				  repeats:YES
+				  ];
+}
+
+- (void)stopAnimation
+{
+	NSLog(@"stopAnimation");
+
+	[self.timer invalidate];
 }
 
 @end

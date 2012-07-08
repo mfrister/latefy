@@ -15,6 +15,8 @@
 
 @implementation StartController
 
+@synthesize errorLabel;
+
 - (id)init
 {
     self = [super initWithNibName:@"StartController" bundle:nil];
@@ -35,6 +37,8 @@
 - (IBAction)start:(id)sender
 {
 	NSLog(@"Start Button touched");
+	
+	self.errorLabel.hidden = YES;
 	
 	UIViewController *controller = [[RecordingController alloc] init];
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

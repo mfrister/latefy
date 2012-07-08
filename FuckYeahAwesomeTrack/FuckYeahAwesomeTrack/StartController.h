@@ -10,4 +10,6 @@
 
 @interface StartController : UIViewController
 
+@property (nonatomic, retain) IBOutlet UILabel *errorLabel;
+
 @end

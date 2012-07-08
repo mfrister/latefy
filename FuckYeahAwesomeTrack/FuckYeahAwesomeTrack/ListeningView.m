@@ -12,12 +12,23 @@
 @implementation ListeningView
 
 @synthesize percent;
+@synthesize sizeFactor;
 
 - (void) setPercent:(CGFloat)value
 {
 	if (value != percent)
 	{
 		percent = value;
+		
+		[self setNeedsDisplay];
+	}
+}
+
+- (void) setSizeFactor:(CGFloat)value
+{
+	if (value != sizeFactor)
+	{
+		sizeFactor = value;
 		
 		[self setNeedsDisplay];
 	}
@@ -52,7 +63,7 @@
 	CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientColors, gradientLocations);
 
 	//// Oval Drawing
-	UIBezierPath *ovalPath = [UIBezierPath bezierPathWithArcCenter:self.center radius:self.bounds.size.width/2 - 40 startAngle:radians(-90) endAngle:radians(percent*3.6-90) clockwise:YES];
+	UIBezierPath *ovalPath = [UIBezierPath bezierPathWithArcCenter:self.center radius:(self.bounds.size.width/2 - 40) * sizeFactor startAngle:radians(-90) endAngle:radians(percent*3.6-90) clockwise:YES];
 	[ovalPath addLineToPoint:self.center];
 
 	CGContextSaveGState(context);

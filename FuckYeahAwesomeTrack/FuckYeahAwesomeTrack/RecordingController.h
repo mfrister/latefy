@@ -29,4 +29,6 @@
 @property (nonatomic, retain) NSString *gracenoteTrack;
 @property (nonatomic, retain) Deezer *deezer;
 @property (nonatomic, retain) IBOutlet ListeningView *listeningView;
+@property (nonatomic, retain) NSTimer *timer;
+
 @end
