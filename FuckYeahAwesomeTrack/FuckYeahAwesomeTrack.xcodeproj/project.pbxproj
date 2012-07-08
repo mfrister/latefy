@@ -29,6 +29,7 @@
 		046A9FE115A8560300769F29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A9FE015A8560300769F29 /* AppDelegate.m */; };
 		046A9FE415A8560300769F29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046A9FE315A8560300769F29 /* ViewController.m */; };
 		046A9FE715A8560300769F29 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046A9FE515A8560300769F29 /* ViewController.xib */; };
+		0482B36E15A99EEE005D856E /* start-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0482B36D15A99EED005D856E /* start-button.png */; };
 		AC53667315A89BC2001E848D /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = AC53666F15A89BC2001E848D /* CHANGELOG.md */; };
 		AC53667415A89BC2001E848D /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AC53667115A89BC2001E848D /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc "; }; };
 		AC53667515A89BC2001E848D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AC53667215A89BC2001E848D /* README.md */; };
@@ -65,6 +66,7 @@
 		046A9FE215A8560300769F29 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		046A9FE315A8560300769F29 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		046A9FE615A8560300769F29 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		0482B36D15A99EED005D856E /* start-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start-button.png"; sourceTree = "<group>"; };
 		AC00C20C15A86300007D8781 /* Secrets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Secrets.h; path = "../../../../Dropbox/Fuck-Yeah-Awesome-Track/Secrets.h"; sourceTree = "<group>"; };
 		AC53666F15A89BC2001E848D /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
 		AC53667015A89BC2001E848D /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				ACA816CD15A8640C00C218DE /* GracenoteMusicID.framework */,
 				ACA816CE15A8640C00C218DE /* libDeezer.framework */,
 				F863A01A15A85EF500595058 /* icon@2x.png */,
+				0482B36D15A99EED005D856E /* start-button.png */,
 				F863A01815A85EF000595058 /* icon.png */,
 				AC53666E15A89BC2001E848D /* JSONKit */,
 				046A9FD615A8560300769F29 /* FuckYeahAwesomeTrack */,
@@ -248,6 +251,7 @@
 				04330EA915A98EA500C87E8B /* StartController.xib in Resources */,
 				04330EAC15A98F7800C87E8B /* RecordingController.xib in Resources */,
 				04330EAE15A990BF00C87E8B /* ResultController.xib in Resources */,
+				0482B36E15A99EEE005D856E /* start-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
