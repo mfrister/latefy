@@ -7,6 +7,7 @@
 //
 
 #import "StartController.h"
+#import "RecordingController.h"
 
 @interface StartController ()
 
@@ -29,6 +30,9 @@
 - (IBAction)start:(id)sender
 {
 	NSLog(@"Start Button touched");
+	
+	UIViewController *controller = [[RecordingController alloc] init];
+	[self.navigationController pushViewController:controller animated:YES];
 }
 
 @end
