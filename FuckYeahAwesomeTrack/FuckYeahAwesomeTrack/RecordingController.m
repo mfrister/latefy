@@ -24,7 +24,7 @@
 @synthesize listeningView;
 @synthesize deezer;
 @synthesize timer;
-
+@synthesize navBar;
 
 - (id)init
 {

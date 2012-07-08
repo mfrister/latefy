@@ -32,5 +32,7 @@
 @property (nonatomic, retain) Deezer *deezer;
 @property (nonatomic, retain) IBOutlet ListeningView *listeningView;
 @property (nonatomic, retain) NSTimer *timer;
+@property (nonatomic, retain) IBOutlet UINavigationBar *navBar;
+//@property (nonatomic, retain) UINavigationController *navController;
 
 @end
