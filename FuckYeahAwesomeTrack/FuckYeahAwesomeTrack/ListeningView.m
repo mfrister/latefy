@@ -48,7 +48,7 @@
 	NSArray *gradientColors = [NSArray arrayWithObjects: 
 							   (id)[UIColor colorWithRed: 0.651 green: 0.0 blue: 0.051 alpha: 1].CGColor,
 							   (id)[UIColor colorWithRed: 1.0 green: 0.0 blue: 0.0 alpha: 1].CGColor, nil];
-	CGFloat gradientLocations[] = {0, 0.7};
+	CGFloat gradientLocations[] = {0, 1};
 	CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientColors, gradientLocations);
 
 	//// Oval Drawing
@@ -58,7 +58,8 @@
 	CGContextSaveGState(context);
 	CGContextBeginTransparencyLayer(context, NULL);
 	[ovalPath addClip];
-	CGContextDrawLinearGradient(context, gradient, CGPointMake(0, 0), CGPointMake(self.bounds.size.width, self.bounds.size.height), 0);
+	CGContextDrawRadialGradient(context, gradient, self.center, self.bounds.size.width/2, self.center, 0, nil);
+//	LinearGradient(context, gradient, CGPointMake(0, 0), CGPointMake(self.bounds.size.width, self.bounds.size.height), 0);
 	CGContextEndTransparencyLayer(context);
 	CGContextRestoreGState(context);
 	
