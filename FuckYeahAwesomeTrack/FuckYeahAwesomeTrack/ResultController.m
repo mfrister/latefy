@@ -7,6 +7,8 @@
 //
 
 #import "ResultController.h"
+#import "RecordingController.h"
+#import <GracenoteMusicID/GNCoverArt.h>
 
 @interface ResultController ()
 
@@ -14,11 +16,24 @@
 
 @implementation ResultController
 
+@synthesize trackName;
+@synthesize artistName;
+@synthesize imageView;
+
 - (id)init
 {
     self = [super initWithNibName:@"ResultController" bundle:nil];
 
     return self;
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    RecordingController* recordingController = (RecordingController *)[ self presentingViewController ];
+    
+    artistName.text = recordingController.gracenoteArtist;
+    trackName.text = recordingController.gracenoteTrack;
+    [self loadImagefromURL:recordingController.gracenoteCoverArt.data];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -34,6 +49,12 @@
 	[[NSNotificationCenter defaultCenter] postNotification:notification];
 	
 //	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) loadImagefromURL:(NSData *)imageData
+{
+	[imageView setImage:[[UIImage alloc] initWithData:imageData]];
+	imageView.hidden = NO;
 }
 
 @end

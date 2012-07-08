@@ -9,16 +9,20 @@
 #import "RecordingController.h"
 #import "ResultController.h"
 #import "Deezer.h"
+#import <GracenoteMusicID/GNCoverArt.h>
 
 @interface RecordingController ()
 
 @end
 
 @implementation RecordingController
-
 @synthesize gracenoteConfig;
+@synthesize gracenoteArtist;
+@synthesize gracenoteTrack;
+@synthesize gracenoteCoverArt;
 @synthesize listeningView;
 @synthesize deezer;
+
 
 - (id)init
 {
@@ -53,8 +57,12 @@
 	[UIView commitAnimations];
 }
 
-- (void) findTrackInDeezerWithArtist:(NSString *)artist withTitle:(NSString *)title
+- (void) findTrackInDeezerWithArtist:(NSString *)artist withTitle:(NSString *)title withCover:(GNCoverArt*) cover
 {
+    gracenoteArtist = artist;
+    gracenoteTrack = title;
+    gracenoteCoverArt = cover;
+    
     deezer = [[Deezer alloc] initWithRecordingController: self];
     [deezer findTrack:title withArtist:artist];    
 }

@@ -10,4 +10,8 @@
 
 @interface ResultController : UIViewController
 
+@property (nonatomic, retain) IBOutlet UILabel *trackName;
+@property (nonatomic, retain) IBOutlet UILabel *artistName;
+@property (nonatomic, retain) IBOutlet UIImageView *imageView;
+
 @end
