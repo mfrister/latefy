@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		041D9F8F15A8833A009409D3 /* Gracenote.m in Sources */ = {isa = PBXBuildFile; fileRef = 041D9F8E15A8833A009409D3 /* Gracenote.m */; };
+		04330EA915A98EA500C87E8B /* StartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04330EA815A98EA500C87E8B /* StartController.xib */; };
+		04330EAC15A98F7800C87E8B /* RecordingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04330EAB15A98F7800C87E8B /* RecordingController.xib */; };
+		04330EAE15A990BF00C87E8B /* ResultController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04330EAD15A990BF00C87E8B /* ResultController.xib */; };
 		04639A9015A865D300E2D534 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04639A8E15A865D300E2D534 /* CoreMedia.framework */; };
 		04639A9115A865D300E2D534 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04639A8F15A865D300E2D534 /* MediaPlayer.framework */; };
 		04639A9415A865D900E2D534 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04639A9315A865D900E2D534 /* AudioToolbox.framework */; };
@@ -38,6 +41,9 @@
 /* Begin PBXFileReference section */
 		041D9F8D15A8833A009409D3 /* Gracenote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gracenote.h; sourceTree = "<group>"; };
 		041D9F8E15A8833A009409D3 /* Gracenote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gracenote.m; sourceTree = "<group>"; };
+		04330EA815A98EA500C87E8B /* StartController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartController.xib; path = ../StartController.xib; sourceTree = "<group>"; };
+		04330EAB15A98F7800C87E8B /* RecordingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RecordingController.xib; path = ../RecordingController.xib; sourceTree = "<group>"; };
+		04330EAD15A990BF00C87E8B /* ResultController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultController.xib; path = ../ResultController.xib; sourceTree = "<group>"; };
 		04639A8E15A865D300E2D534 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		04639A8F15A865D300E2D534 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		04639A9315A865D900E2D534 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -146,6 +152,9 @@
 				046A9FE015A8560300769F29 /* AppDelegate.m */,
 				046A9FE215A8560300769F29 /* ViewController.h */,
 				046A9FE315A8560300769F29 /* ViewController.m */,
+				04330EA815A98EA500C87E8B /* StartController.xib */,
+				04330EAB15A98F7800C87E8B /* RecordingController.xib */,
+				04330EAD15A990BF00C87E8B /* ResultController.xib */,
 				046A9FE515A8560300769F29 /* ViewController.xib */,
 				046A9FD715A8560300769F29 /* Supporting Files */,
 				041D9F8D15A8833A009409D3 /* Gracenote.h */,
@@ -236,6 +245,9 @@
 				F863A01B15A85EF500595058 /* icon@2x.png in Resources */,
 				AC53667315A89BC2001E848D /* CHANGELOG.md in Resources */,
 				AC53667515A89BC2001E848D /* README.md in Resources */,
+				04330EA915A98EA500C87E8B /* StartController.xib in Resources */,
+				04330EAC15A98F7800C87E8B /* RecordingController.xib in Resources */,
+				04330EAE15A990BF00C87E8B /* ResultController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
