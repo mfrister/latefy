@@ -26,17 +26,24 @@
 {
     NSString *message = status.message;;
 	
-    switch(status.status) {
+    switch (status.status)
+	{
         case GENERATING:
         case FINGERPRINTING:
         case WEBSERVICES:
             [controller setPercent:100.0];
             break;
-        case RECORDING:
+			
+		case RECORDING:
             message = [NSString stringWithFormat: @"%@ %d@", status.message, status.percentDone];
             [controller setPercent:status.percentDone];
             break;
+			
+		default:
+			// do nothing
+			break;
     }
+	
 	NSLog(@"%@", message);
 }
 
