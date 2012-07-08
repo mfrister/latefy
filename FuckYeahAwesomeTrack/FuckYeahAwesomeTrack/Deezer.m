@@ -20,7 +20,6 @@
 @implementation Deezer
 
 @synthesize deezerConnect;
-@synthesize query;
 @synthesize trackId;
 @synthesize requestType;
 @synthesize recordingController;
@@ -34,7 +33,7 @@
     return self;
 }
 - (void)addTrackWithArtist: (NSString*) artist andTitle: (NSString*) title {
-    query = [[NSString alloc] initWithFormat:@"%@ %@", artist, title];
+//    query = [[NSString alloc] initWithFormat:@"%@ %@", artist, title];
     [self authorize];
 }
 
@@ -55,20 +54,18 @@
 - (void)findTrack:(NSString *)title withArtist: (NSString *)artist
 {
     NSLog(@"Finding Track in deezer");
-    NSDictionary *params = 
-        [NSDictionary 
-            dictionaryWithObjectsAndKeys: 
-                [[NSString alloc] initWithFormat:@"%@ %@", artist, title],
-                @"q",
-                nil
-        ];
+    NSString *query = [[NSString alloc] initWithFormat:@"%@ %@", artist, title];
 
-    requestType = DEEZER_FIND_TRACK;
-    [self request: @"search" params: params];
+    NSString *escapedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *url = [NSString stringWithFormat: @"http://api.deezer.com/2.0/search?output=json&request_method=GET&q=%@", escapedQuery];
+    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSError *requestError;
+    NSURLResponse *urlResponse = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    [self handleFindTrackResponse:data];
 }
 
 - (void) handleFindTrackResponse:(NSData *)data {
-    query = nil;
     NSDictionary *response = [data objectFromJSONData];
     NSNumber *resultCount = [response objectForKey:@"total"];
     NSLog(@"Track count: %@", resultCount);
@@ -179,9 +176,6 @@
 - (void)request:(DeezerRequest *)request didReceiveResponse:(NSData *)data {
     NSLog(@"Deezer response");
     switch(requestType) {
-        case DEEZER_FIND_TRACK:
-            [self handleFindTrackResponse:data];
-            break;
         case DEEZER_FIND_PLAYLIST:
             [self handleFindPlaylistResponse:data];
             break;

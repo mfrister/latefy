@@ -40,9 +40,8 @@
 	self.gracenoteConfig = Gracenote.makeConfig;        
 
     NSLog(@"Fingerprint start");
-    [self findTrackInDeezerWithArtist: @"Eminem" withTitle: @"Loose Yourself" ];
     
-    // [Gracenote fingerprint: self];
+    [Gracenote fingerprint: self];
 }
 
 - (void) setPercent:(CGFloat) percent

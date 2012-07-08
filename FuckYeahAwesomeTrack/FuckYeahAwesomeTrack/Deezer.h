@@ -13,7 +13,6 @@
 @class RecordingController;
 
 // values for requestType
-#define DEEZER_FIND_TRACK 1
 #define DEEZER_FIND_PLAYLIST 2
 #define DEEZER_CREATE_PLAYLIST 3  // optional step if playlist doesn't exist
 #define DEEZER_ADD_TRACK_TO_PLAYLIST 4
@@ -22,7 +21,6 @@
 
 @property (nonatomic, retain) DeezerConnect *deezerConnect;
 
-@property (nonatomic, retain) NSString *query;
 @property (nonatomic, retain) NSString *trackId;
 @property (nonatomic) int requestType;
 @property (nonatomic, assign) RecordingController *recordingController;
