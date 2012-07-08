@@ -7,6 +7,7 @@
 //
 
 #import "RecordingController.h"
+#import "ResultController.h"
 
 @interface RecordingController ()
 
@@ -24,6 +25,23 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return interfaceOrientation == UIInterfaceOrientationPortrait;
+}
+
+- (IBAction)recordingFinished:(id)sender
+{
+	NSLog(@"Recording finished");
+	
+	UIViewController *controller = [[ResultController alloc] init];
+	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	
+	[self presentViewController:controller animated:YES completion:nil];
+}
+
+- (IBAction)recordingFailed:(id)sender
+{
+	NSLog(@"Recording failed");
+	
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
