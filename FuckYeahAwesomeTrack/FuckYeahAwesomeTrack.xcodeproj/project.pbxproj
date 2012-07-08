@@ -34,6 +34,7 @@
 		AC53667515A89BC2001E848D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AC53667215A89BC2001E848D /* README.md */; };
 		ACE1902A15A88696000B5CD3 /* Deezer.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE1902915A88696000B5CD3 /* Deezer.m */; };
 		F85B3B4D15A9ABAB005ECB67 /* StartController.m in Sources */ = {isa = PBXBuildFile; fileRef = F854CB1C15A9A31B0010329C /* StartController.m */; };
+		F85B3B5115A9B04D005ECB67 /* RecordingController.m in Sources */ = {isa = PBXBuildFile; fileRef = F85B3B4F15A9B046005ECB67 /* RecordingController.m */; };
 		F863A01915A85EF000595058 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F863A01815A85EF000595058 /* icon.png */; };
 		F863A01B15A85EF500595058 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F863A01A15A85EF500595058 /* icon@2x.png */; };
 		F863A04615A879B000595058 /* ListeningView.m in Sources */ = {isa = PBXBuildFile; fileRef = F863A04515A879B000595058 /* ListeningView.m */; };
@@ -77,6 +78,8 @@
 		ACE1902915A88696000B5CD3 /* Deezer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deezer.m; sourceTree = "<group>"; };
 		F854CB1B15A9A31B0010329C /* StartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartController.h; sourceTree = "<group>"; };
 		F854CB1C15A9A31B0010329C /* StartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartController.m; sourceTree = "<group>"; };
+		F85B3B4F15A9B046005ECB67 /* RecordingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordingController.m; sourceTree = "<group>"; };
+		F85B3B5015A9B046005ECB67 /* RecordingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordingController.h; sourceTree = "<group>"; };
 		F863A01815A85EF000595058 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F863A01A15A85EF500595058 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		F863A04415A879B000595058 /* ListeningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListeningView.h; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 		046A9FD615A8560300769F29 /* FuckYeahAwesomeTrack */ = {
 			isa = PBXGroup;
 			children = (
+				F85B3B4F15A9B046005ECB67 /* RecordingController.m */,
+				F85B3B5015A9B046005ECB67 /* RecordingController.h */,
 				F854CB1B15A9A31B0010329C /* StartController.h */,
 				F854CB1C15A9A31B0010329C /* StartController.m */,
 				AC00C20C15A86300007D8781 /* Secrets.h */,
@@ -271,6 +276,7 @@
 				F863A04615A879B000595058 /* ListeningView.m in Sources */,
 				AC53667415A89BC2001E848D /* JSONKit.m in Sources */,
 				F85B3B4D15A9ABAB005ECB67 /* StartController.m in Sources */,
+				F85B3B5115A9B04D005ECB67 /* RecordingController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
