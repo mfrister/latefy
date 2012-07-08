@@ -7,6 +7,7 @@
 //
 
 #import "RecordingController.h"
+#import "ResultController.h"
 
 @interface RecordingController ()
 
@@ -46,6 +47,23 @@
 	[UIView setAnimationDuration:1];
 	listeningView.percent = percent;
 	[UIView commitAnimations];
+}
+
+- (IBAction)recordingFinished:(id)sender
+{
+	NSLog(@"Recording finished");
+	
+	UIViewController *controller = [[ResultController alloc] init];
+	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	
+	[self presentViewController:controller animated:YES completion:nil];
+}
+
+- (IBAction)recordingFailed:(id)sender
+{
+	NSLog(@"Recording failed");
+	
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
