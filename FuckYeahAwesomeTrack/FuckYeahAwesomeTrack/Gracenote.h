@@ -7,14 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GracenoteMusicID/GNConfig.h>
 #import <GracenoteMusicID/GNSearchResponse.h>
 #import <GracenoteMusicID/GNOperationStatusChanged.h>
 #import <GracenoteMusicID/GNSearchResultReady.h>
-#import "ViewController.h"
+#import "RecordingController.h"
+
+@class RecordingController;
 
 @interface Gracenote : NSObject
-+ (GNConfig*) initConfig;
-+ (void) fingerprint: (ViewController*) controller;
+{    
+}
+
++ (void) fingerprint: (RecordingController *)controller;
++ (GNConfig*) makeConfig;
+
 @end
 
 // Result-ready object implements GNSearchResultReady and
@@ -22,5 +29,5 @@
 @interface SearchResultsStatusReady : NSObject <GNSearchResultReady, GNOperationStatusChanged>
 {
 }
-@property (nonatomic, assign) ViewController *controller;
+@property (nonatomic, assign) RecordingController *controller;
 @end

@@ -59,12 +59,12 @@
         if ([result isAnySearchNoMatchStatus]) 
 		{
             NSLog(@"NO_MATCH\n");
-            controller.trackName.text = @"Not Found :("; 
+            //controller.trackName.text = @"Not Found :("; 
             
-            [ controller 
-             sendTrackToDeezerWithArtist: @"Absolute Beginner"
-             withTitle: @"Liebes Lied"
-            ];
+//            [ controller 
+//             sendTrackToDeezerWithArtist: @"Absolute Beginner"
+//             withTitle: @"Liebes Lied"
+//            ];
         }
 		else 
 		{
@@ -79,29 +79,27 @@
             GNCoverArt *coverArt = best.coverArt;
             NSLog(@"ArtURL: %@", coverArt.url);
             
-            controller.trackName.text = best.artist;
-            [controller loadImagefromURL:coverArt.data];
-			
-            controller.trackName.text = best.trackTitle;
-            controller.artistName.text = best.artist;
-            
-            [ controller 
-                sendTrackToDeezerWithArtist: best.artist
-                withTitle: best.trackTitle
-            ];
+//            controller.trackName.text = best.artist;
+//            [controller loadImagefromURL:coverArt.data];
+//			
+//            controller.trackName.text = best.trackTitle;
+//            controller.artistName.text = best.artist;
+//            
+//            [ controller 
+//                sendTrackToDeezerWithArtist: best.artist
+//                withTitle: best.trackTitle
+//            ];
         }
     }
 	
     NSLog(@"%@", result);
-	
-	controller.button.hidden = NO;
 }
 
 @end
 
 @implementation Gracenote
 
-+ (GNConfig *)initConfig
++ (GNConfig *)makeConfig
 {
 	GNConfig *config = [GNConfig init:GRACENOTE_CLIENT_ID];
 	
@@ -113,13 +111,13 @@
 	return config;
 }
 
-+ (void) fingerprint: (ViewController *)controller
++ (void) fingerprint: (RecordingController *)controller
 {
 	// Create result-ready object to receive recognition result
 	SearchResultsStatusReady *searchResultReady = [SearchResultsStatusReady alloc];
 	searchResultReady.controller = controller;
 	// Invoke recognition operation
-	[GNOperations recognizeMIDStreamFromMic: searchResultReady config:controller.config];
+	[GNOperations recognizeMIDStreamFromMic: searchResultReady config:controller.gracenoteConfig];
 }
 
 @end

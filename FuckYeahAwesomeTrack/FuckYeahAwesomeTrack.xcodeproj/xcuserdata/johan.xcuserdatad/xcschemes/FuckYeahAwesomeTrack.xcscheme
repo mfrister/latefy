@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "046A9FCB15A8560300769F29"
-               BuildableName = "FuckYeahAwesomeTrack.app"
+               BuildableName = "Latefy.app"
                BlueprintName = "FuckYeahAwesomeTrack"
                ReferencedContainer = "container:FuckYeahAwesomeTrack.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "046A9FCB15A8560300769F29"
-            BuildableName = "FuckYeahAwesomeTrack.app"
+            BuildableName = "Latefy.app"
             BlueprintName = "FuckYeahAwesomeTrack"
             ReferencedContainer = "container:FuckYeahAwesomeTrack.xcodeproj">
          </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "046A9FCB15A8560300769F29"
-            BuildableName = "FuckYeahAwesomeTrack.app"
+            BuildableName = "Latefy.app"
             BlueprintName = "FuckYeahAwesomeTrack"
             ReferencedContainer = "container:FuckYeahAwesomeTrack.xcodeproj">
          </BuildableReference>
@@ -69,7 +69,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "046A9FCB15A8560300769F29"
-            BuildableName = "FuckYeahAwesomeTrack.app"
+            BuildableName = "Latefy.app"
             BlueprintName = "FuckYeahAwesomeTrack"
             ReferencedContainer = "container:FuckYeahAwesomeTrack.xcodeproj">
          </BuildableReference>

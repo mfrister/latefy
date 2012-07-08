@@ -30,7 +30,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-	self.config = Gracenote.initConfig;        
+	//self.config = Gracenote.makeConfig;        
 	
 	trackName.text = @"";
 	artistName.text = @"";
