@@ -49,9 +49,9 @@
 	[UIView commitAnimations];
 }
 
-- (IBAction)recordingFinished:(id)sender
+- (IBAction)success:(id)sender
 {
-	NSLog(@"Recording finished");
+	NSLog(@"Successfull found track");
 	
 	UIViewController *controller = [[ResultController alloc] init];
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
@@ -59,9 +59,9 @@
 	[self presentViewController:controller animated:YES completion:nil];
 }
 
-- (IBAction)recordingFailed:(id)sender
+- (IBAction)failed:(id)sender
 {
-	NSLog(@"Recording failed");
+	NSLog(@"Failed track finding");
 	
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
