@@ -58,7 +58,7 @@
 	CGContextSaveGState(context);
 	CGContextBeginTransparencyLayer(context, NULL);
 	[ovalPath addClip];
-	CGContextDrawRadialGradient(context, gradient, self.center, self.bounds.size.width/2, self.center, 0, nil);
+	CGContextDrawRadialGradient(context, gradient, self.center, self.bounds.size.width/2, self.center, 0, 0);
 //	LinearGradient(context, gradient, CGPointMake(0, 0), CGPointMake(self.bounds.size.width, self.bounds.size.height), 0);
 	CGContextEndTransparencyLayer(context);
 	CGContextRestoreGState(context);

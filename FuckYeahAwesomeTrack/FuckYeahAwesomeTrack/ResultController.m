@@ -26,4 +26,14 @@
     return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
+- (IBAction)goBack:(id)sender
+{
+	NSLog(@"Back Button touched");
+	
+	NSNotification *notification = [NSNotification notificationWithName:@"BACKTOSTART" object:nil];
+	[[NSNotificationCenter defaultCenter] postNotification:notification];
+	
+//	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
