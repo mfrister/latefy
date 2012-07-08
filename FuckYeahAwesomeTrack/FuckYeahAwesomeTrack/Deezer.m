@@ -71,13 +71,13 @@
     NSLog(@"Track count: %@", resultCount);
     if([resultCount intValue] == 0) {
         NSLog(@"Warning: No tracks found.");
-        // TODO display some message
+        [recordingController failed:nil];
         return;
     }
     NSDictionary *track = [[response objectForKey:@"data"] objectAtIndex:0];
     trackId = [track objectForKey:@"id"];
     NSLog(@"Found track with ID: %@", trackId);
-    //[self findPlaylist];
+    [recordingController success:nil];
 }
 
 - (void) findPlaylist {
